@@ -9,7 +9,6 @@ const userSchema = new mongoose.Schema({
     emailUser:{type: String, required: true, unique:true},
     phoneUser: {type: Number, required: true, unique:true},
     passwordUser:{type: String, required: true},
-    roleUser: {type: String, default: 'cliente'},
 });
 
 //3. La base de datos debe crear una coleccion con el esquma anterior (Nombre de la caracteristica, estructura de los datos)
