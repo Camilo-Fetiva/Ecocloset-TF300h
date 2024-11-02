@@ -14,6 +14,7 @@
     ![alt text](image-3.png)
 
 3. EJECUTAR MONGO DB: A partir de esto se generan las bases de datos utilizadas para el proyecto de Ecocloset, en nuestro caso dirigidas a los productos a ofrecer y a los registros de usuarios de la plataforma, esto estructurando las carpetas, configurando las dependencias, conectando la base de datos.
+
 ![alt text](image-2.png)
 
 4. CREAR MODELOS DE DATOS: Al final generamos 2 archivos de JS que contendran nuestra lista de base de datos, conectandola con todo el proyecto.
