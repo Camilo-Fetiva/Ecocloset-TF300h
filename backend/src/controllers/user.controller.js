@@ -9,7 +9,7 @@ export const postUser = async (request, response) =>{
     try {
 
         // Deestructuracion ->  Permite acceder a cada una de las variables suministradas por el usuario en el Schema de datos
-        // const {nameUser, emailUser, passwordUser, roleUser} = request.body;
+        const {fullName, emailUser, phoneUser, passwordUser} = request.body;
         
         // // encriptar la contrasena
         // // hash -> metodo para encriptar la contrasena
@@ -25,7 +25,7 @@ export const postUser = async (request, response) =>{
     } catch (error) {
         return response.status(400).json({
             mensaje: 'Error al crear un usuario',
-            problema: error || error.message
+            problema: error.message
         });
     }
 }
