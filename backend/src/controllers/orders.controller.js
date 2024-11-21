@@ -10,7 +10,7 @@ import { request, response } from 'express';
 export const postOrder = async (request, response) =>{
 
     try{
-        const newOrder = await orderModelModel.create(request.body); // Coleccion en la base de datos
+        const newOrder = await orderModel.create(request.body); // Coleccion en la base de datos
         return response.status(201).json({
             mensaje: "Orden creada satisfactoriamente",
             datos: newOrder
@@ -18,7 +18,7 @@ export const postOrder = async (request, response) =>{
     }catch (error){
         return response.status(400).json({
             mensaje: "Ocurrio un error al crear la orden",
-            problem: error || error.message
+            problem:  error.message
         });
     };
 }
@@ -28,7 +28,7 @@ export const postOrder = async (request, response) =>{
 export const getOrder = async (request, response) => {
 
     try{
-        let searchOrder = await orderModel.find();
+        let searchOrder = await orderModel.find().populate('products');
         // Agregar validaciones
         if(searchOrder.length === 0){
             return response.status(200).json({
