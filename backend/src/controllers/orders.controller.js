@@ -28,7 +28,11 @@ export const postOrder = async (request, response) =>{
 export const getOrder = async (request, response) => {
 
     try{
-        let searchOrder = await orderModel.find().populate('products');
+        let searchOrder = await orderModel.find().populate({
+            path :'products',
+            select: ''
+
+        });
         // Agregar validaciones
         if(searchOrder.length === 0){
             return response.status(200).json({
