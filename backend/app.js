@@ -5,6 +5,7 @@ import { connectionMongo } from './src/config/dataBase.js'; // dependencia para 
 import { productRouter } from './src/routes/products.routes.js';
 import { userRouter } from './src/routes/users.routes.js';
 import { orderRouter } from './src/routes/order.routes.js';
+import { loginRouter } from './src/routes/login.routes.js';
 import { adminRouter } from './src/routes/admin.routes.js';
 
 
@@ -17,7 +18,8 @@ app.use(express.json()); //Usar formato JSON, CREAR y ACTUALIZAR datos
 app.use ( '/productos', productRouter);
 app.use ('/usuarios', userRouter);
 app.use ('/ordenes', orderRouter);
-app.use ('/administradores', adminRouter);
+app.use ('/login', loginRouter);
+app.use ( '/administrador', adminRouter);
 
 //INVOCAR LA FUNCION DE LA BASE DE DATOS
 connectionMongo ();

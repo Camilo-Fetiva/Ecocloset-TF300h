@@ -73,3 +73,32 @@ export const deleteOrderById = async (request, response) => {
         });
     }
 }
+
+// 2.4 EDITAR (PUT)
+export const putOrderById = async (request, response) => {
+
+    try {
+        let idForPut = request.params.id; //Parametro ID del producto a actualizar
+        let dataForUpdate = request.body; // Informacion actualizada
+
+        const orderUpdated = await orderModel.findByIdAndUpdate(idForPut, dataForUpdate); // Parametro del ID  y luego parametro de la info actualizada
+
+    
+        if(!orderUpdated){
+            return response.status(404).json ({
+                mensaje: "No se encontro orden para actualizar"
+            });
+        }
+
+        return response.status(200).json({
+            mensaje: "Se actualizo la orden correctamente",
+            datos: orderUpdated
+        })
+
+    } catch (error) {
+        return response.status(400).json({
+            mensaje: "Ocurrio un error al actualizar la orden",
+            problem: error || error.message
+        });
+    }
+} 

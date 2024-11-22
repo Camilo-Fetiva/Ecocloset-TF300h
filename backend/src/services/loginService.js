@@ -1,9 +1,12 @@
 // ARCHIVO PARA LA LOGICA NECESARIO DE LOS INICIOS DE SESION DE LOS USUARIOS
 
 // 1. Importar las dependencias y los modulos
-import { userModel } from "../models/users.model.js";
+import { userModel } from "../models/user.model.js";
+import { adminModel } from "../models/admin.model.js";
+
 // 2. Importar funcion para crear los tokens
 import { generateToken } from "../lib/jwt.js";
+
 // 3. IMPORTAR LA DEPENDENCIA DE ENCRIPTACION
 import bcrypt from 'bcryptjs';
 import { json, request } from "express";
@@ -14,21 +17,29 @@ export async function loginUser(request, response){
     // MANEJO DE ERRORES
     try {
         // VALIDACION = CORREO
-        const {emailUser, passwordUser} = request.body;
+        const {emailUser, emailAdmin, passwordUser} = request.body;
 
-        // VALIDACION emailLogin existe
+        // VALIDACION usuario existe
         const userFound = await userModel.findOne({
             emailLogin : emailUser
+        });
+
+        // VALIDACION admin existe
+        const adminFound = await adminModel.findOne({
+            emailLogin : emailAdmin
         });
 
         // QUE OCURRE SI NO SE ENCUENTRA EL EMAILUSER EN LA BASE DE DATOS
         if(!userFound){
             return response.status(404).json({mensaje: 'Usuario no encontrado'});
+        }else if(!adminFound){
+            return response.status(404).json({mensaje: 'Administrador no encontrado'});
         }
 
         // VALIDACION DE LA CONTRASENA -> comparar la contrasena
 
-        const isValidPassword = await bcrypt.compare(passwordUser, userFound.passwordLogin);
+        let isValidPassword = await bcrypt.compare(passwordLogin, userFound.passwordUser, userFound.passwordAdmin);
+        
 
         // QUE OCURRE SI LA CONTRASENA ES INCORRECTA
         if(!isValidPassword){
@@ -42,9 +53,9 @@ export async function loginUser(request, response){
         }
 
         // si es admin enviar la info en el payload
-        // if(userFound.roleUser === 'Admin'){
-        //     payload.isAdmin = true;
-        // }
+        if(userFound.roleUser === 'Admin'){
+            payload = true;
+        }
 
         // GENERAR EL TOKEN
         const token = await generateToken(payload);

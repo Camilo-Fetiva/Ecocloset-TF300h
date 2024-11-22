@@ -21,10 +21,8 @@ export function generateToken(payload){
 
         jwt.sign(payload, key, {expiresIn: '1h'}, (error, token)=>{
             if(error){
-                // sale mal -> mensaje de error
                 reject (new Error('Error al generar token ' + error.message));
             }else{
-                // sale bien -> token
                 resolve(token);
             }
         });
@@ -38,10 +36,8 @@ export function verifyToken(token){
 
         jwt.verify(token, key, (error, decoded)=>{
             if(error){
-                // sale mal -> mensaje de error
                 reject (new Error('Error al generar JWT ' + error.message));
             }else{
-                // sale bien -> decoded
                 resolve(decoded);
             }
         });

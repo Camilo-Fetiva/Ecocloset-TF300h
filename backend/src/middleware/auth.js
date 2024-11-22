@@ -21,12 +21,10 @@ export function authToken(requieredRole){
 
         // 2. Token permitido
         token = token.split(' ')[1];
-        console.log('con espacio' + token);
 
        // 3. Verificacion de errores 
        try {
         const decoded = await verifyToken(token);
-        console.log ('token verificado ' , decoded);
 
         // 4. Verificar rol
         if(requieredRole === 'admin' && !decoded.isAdmin){

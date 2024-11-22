@@ -1,5 +1,5 @@
 // Importar las dependencias y los modulos
-// import { loginUser } from "../services/loginService.js"; //funcion
+import { loginUser } from "../services/loginService.js"; //funcion
 import express from 'express'; //dependencia
 
 // Configurar el router de EXPRESS
