@@ -17,4 +17,18 @@
 
 ![alt text](image-2.png)
 
-4. CREAR MODELOS DE DATOS: Al final generamos 2 archivos de JS que contendran nuestra lista de base de datos, conectandola con todo el proyecto.
+4. CREAR MODELOS DE DATOS: Generamos los modelos de datos necesarios en archivos de JS que contendran nuestra lista de base de datos, conectandola con todo el proyecto.
+
+5. CREAR RUTAS DE USUARIOS: A partir de los modelos generamos las rutas para su prueba pertinente.
+.
+6. POSTMAN: Con Postman conectado mediante nuestra base de datos hicimos las pruebas para las diversas peticiones generadas con los modelos de datos y su logíca
+
+6. JWT: Esta depencia la utilizamos para encirptar la contraseña de nuestros usuarioss y administradors pare tener un filtro de seguridad mayor.
+
+7. VERIFICACIÓN DE ROLES: Dandole un rol especifico tanto a nuestros usuarios como a nuestros administradores, permitimos que estos puedan acceder a las peticiones permitidas, generando una logica de uso.
+
+PROYECTO REALIZADO POR:
+    Camilo Fetiva (Scrum Master)
+    Santiago Gutierrez (Developer)
+
+BOOTCAMP DE DESARROLLO WEB BIT 2024
