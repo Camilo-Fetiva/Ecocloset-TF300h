@@ -5,8 +5,8 @@ import mongoose, { now } from "mongoose";
 
 //2.Plantilla de datos definida como SCHEMA -> esquema de datos solicitado a guardar en la base de datos
 const orderSchema = new mongoose.Schema({
-    productOrder:{type: Schema.Types.ObjectId, ref: 'product'}, // Referencia al modelo productSchema
-    userOrder:{type: Schema.Types.ObjectId, ref: 'user'},// Referencia al modelo userSchema
+    productOrder:[{type: mongoose.Schema.Types.ObjectId, ref: 'product'}], // Referencia al modelo productSchema (USAMOS EL mongoose. PARA LA PRUEBA)
+    userOrder:{type: mongoose.Schema.Types.ObjectId, ref: 'user'},// Referencia al modelo userSchema (USAMOS EL mongoose. PARA LA PRUEBA)
     dateOrder:{type: Date, default: Date.now, required: true},
     priceOrder:{type: Number, required: true},
 });
