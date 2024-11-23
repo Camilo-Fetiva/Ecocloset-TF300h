@@ -11,13 +11,13 @@ export const userRouter = express.Router();
 // 3. Crear la rutas para las peticiones de los productos
 
 // 3.1 Ruta para la peticion POST
-userRouter.post ('/crear', authToken('admin'), postUser);
+userRouter.post ('/crear', postUser);
 
 // 3.2 Ruta para la peticion GET
 userRouter.get ('/obtener', authToken('admin'), getUser);
 
 // 3.3 Ruta para la peticion PUT
-userRouter.put ('/actualizar', authToken('admin'), putUserById);
+userRouter.put ('/actualizar/:id', authToken('admin'), putUserById);
 
 // 3.4 Ruta para la peticion DELETE
-userRouter.delete ('/eliminar', authToken('admin'), deleteUserById);
+userRouter.delete ('/eliminar/:id', authToken('admin'), deleteUserById);

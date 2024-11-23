@@ -9,7 +9,7 @@ import { generateToken } from "../lib/jwt.js";
 
 // 3. IMPORTAR LA DEPENDENCIA DE ENCRIPTACION
 import bcrypt from 'bcryptjs';
-import { json, request } from "express";
+
 
 
 // 4. CREAR LA FUNCION PARA GESTIONAR EL INICIO
@@ -17,28 +17,31 @@ export async function loginUser(request, response){
     // MANEJO DE ERRORES
     try {
         // VALIDACION = CORREO
-        const {emailUser, emailAdmin, passwordUser} = request.body;
+        const {emailLogin, passwordLogin} = request.body;
 
         // VALIDACION usuario existe
-        const userFound = await userModel.findOne({
-            emailLogin : emailUser
+        let userFound = await userModel.findOne({
+            email: emailLogin,
         });
 
-        // VALIDACION admin existe
-        const adminFound = await adminModel.findOne({
-            emailLogin : emailAdmin
-        });
-
-        // QUE OCURRE SI NO SE ENCUENTRA EL EMAILUSER EN LA BASE DE DATOS
-        if(!userFound){
-            return response.status(404).json({mensaje: 'Usuario no encontrado'});
-        }else if(!adminFound){
-            return response.status(404).json({mensaje: 'Administrador no encontrado'});
+        let adminFound = null;
+        if(!userFound) {
+            adminFound = await adminModel.findOne({
+            email: emailLogin,
+            });
         }
+
+        // QUE OCURRE SI NO SE ENCUENTRA EL EMAIL EN LA BASE DE DATOS
+        if(!userFound && !adminFound){
+            return response.status(404).json({mensaje: 'Usuario o administrador no encontrado'});
+        }
+        
+        const user = userFound || adminFound;
+        const role = userFound ? 'user' : 'admin';
 
         // VALIDACION DE LA CONTRASENA -> comparar la contrasena
 
-        let isValidPassword = await bcrypt.compare(passwordLogin, userFound.passwordUser, userFound.passwordAdmin);
+        let isValidPassword = await bcrypt.compare(passwordLogin, user.password);
         
 
         // QUE OCURRE SI LA CONTRASENA ES INCORRECTA
@@ -48,13 +51,9 @@ export async function loginUser(request, response){
 
         // VERIFICAR EL ROL Y LOS PERMISOS DEL USUARIO
         const payload = {
-            id: userFound._id,
-            name: userFound.nameUser
-        }
-
-        // si es admin enviar la info en el payload
-        if(userFound.roleUser === 'Admin'){
-            payload = true;
+            id: user._id,
+            name: user.nameUser|| user.nameAdmin,
+            role: role,
         }
 
         // GENERAR EL TOKEN
@@ -62,7 +61,8 @@ export async function loginUser(request, response){
 
         // TODO CORRECTO
         return response.status(200).json({
-            mensaje: 'Inicio de sesion existoso',
+            mensaje: 'Inicio de sesion existoso', 
+            token
         });
 
     } catch (error) {

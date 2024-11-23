@@ -7,9 +7,9 @@ import { userModel } from "../models/user.model.js";
 export const postUser = async (request, response) =>{
     try {
         // Deestructuracion ->  Permite acceder a cada una de las variables suministradas por el usuario en el Schema de datos
-        const {fullName, emailUser, phoneUser, passwordUser} = request.body;
+        const {fullName, email, phone, password} = request.body;
 
-        const newUser = await userModel.create({fullName, emailUser, phoneUser, passwordUser});
+        const newUser = await userModel.create({fullName, email, phone, password});
 
         return response.status(201).json({
             mensaje: "Usuario creado satisfactoriamente",

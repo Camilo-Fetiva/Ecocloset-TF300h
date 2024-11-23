@@ -21,13 +21,14 @@ export function authToken(requieredRole){
 
         // 2. Token permitido
         token = token.split(' ')[1];
+        // console.log('sin bearer ' + token);
 
        // 3. Verificacion de errores 
        try {
         const decoded = await verifyToken(token);
-
+        console.log (decoded);
         // 4. Verificar rol
-        if(requieredRole === 'admin' && !decoded.isAdmin){
+        if(requieredRole === 'admin' && !decoded.role === 'admin'){
             return response.status(403).json({
                 mensaje: "Acceso denegado",
             });

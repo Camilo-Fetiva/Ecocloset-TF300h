@@ -1,5 +1,7 @@
 // 1. Importar los modelos de datos y deppendencias a manipular
 import { adminModel } from "../models/admin.model.js";
+import bcrypt from "bcryptjs";
+
 
 // 2. Crear la logica de las peticiones
 
@@ -9,13 +11,13 @@ export const postAdmin = async (request, response) =>{
     try {
 
         // Deestructuracion ->  Permite acceder a cada una de las variables suministradas por el usuario en el Schema de datos
-        const {emailAdmin, passwordAdmin, imageAdmin} = request.body;
+        const {email, password, image} = request.body;
         
-        // // encriptar la contrasena
-        // // hash -> metodo para encriptar la contrasena
-        // const codedPassword = await bcrypt.hash(passwordUser, 10);
+        // encriptar la contrasena
+        // hash -> metodo para encriptar la contrasena
+        const codedPassword = await bcrypt.hash(password, 10);
 
-        const newAdmin = await adminModel.create({emailAdmin, passwordAdmin, imageAdmin});
+        const newAdmin = await adminModel.create({email, password:codedPassword, image});
 
         return response.status(201).json({
             mensaje: "Administrador creado satisfactoriamente",
@@ -25,7 +27,7 @@ export const postAdmin = async (request, response) =>{
     } catch (error) {
         return response.status(400).json({
             mensaje: 'Error al crear un administrador',
-            problema: error.message
+            problema: error
         });
     }
 }
