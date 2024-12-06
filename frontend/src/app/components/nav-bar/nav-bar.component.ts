@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
+
 // DEPENDENCIAS NECESARIAS
 import { RouterOutlet } from '@angular/router';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-nav-bar',
   standalone: true,
   imports: [RouterOutlet, RouterLink,], //<- USO EN EL COMPONENT
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  templateUrl: './nav-bar.component.html',
+  styleUrl: './nav-bar.component.css'
 })
-export class HomeComponent {
+export class NavBarComponent {
 
 }
