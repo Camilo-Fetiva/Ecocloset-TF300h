@@ -1,5 +1,6 @@
 // 1. Importar los modelos de datos y deppendencias a manipular
 import { userModel } from "../models/user.model.js";
+import bcrypt from "bcryptjs";
 
 // 2. Crear la logica de las peticiones
 
@@ -9,7 +10,8 @@ export const postUser = async (request, response) =>{
         // Deestructuracion ->  Permite acceder a cada una de las variables suministradas por el usuario en el Schema de datos
         const {fullName, email, phone, password} = request.body;
 
-        const newUser = await userModel.create({fullName, email, phone, password});
+        const codedPassword = await bcrypt.hash(password, 10);
+        const newUser = await userModel.create({fullName, email, phone, password:codedPassword});
 
         return response.status(201).json({
             mensaje: "Usuario creado satisfactoriamente",
