@@ -1,27 +1,25 @@
+## GUÍA PROYECTO FINAL TF300H
+
 # Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
+## ECOCLOSET
+Ecocloset en una aplicación que conecta de manera rápida y sencilla estos consumidores de moda sostenible con los emprendimientos que generan un cambio en la industria de la moda, para generar un cambio eficaz y moderno con el uso de herramientas a la vanguardia de la tecnología y siempre buscando el objetivo de ser sostenibles.
 
-## Development server
+Ofrecemos distintas prendas de vestir y accesorios de moda, siempre pensando en el impacto ambiental generado al planeta, buscando ser generadores de cambio y ofreciendo alternativas sostenibles a nuestros compradores.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## EJECUCIÓN EN ANGULAR
+    1. Abrir terminal en el editor de codigo
+    2. Utilizar el ejecutor de Angular -> ng serve -o (Esto ejecutara la aplicación web automaticamente)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## TECNOLOGIAS UTILIZADAS
+    1. HTML
+    2. CSS
+    3. TYPESCRIPT
+    4. ANGULAR
+    5. BOOTSTRAP
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## AUTORES
+<br> Proyecto realizado por Santiago Gutierrez (Como desarollador) y Camilo Fetiva (Como SCRUM Master) para el Bootcamp de Desarrollo Web 2024 </br>
