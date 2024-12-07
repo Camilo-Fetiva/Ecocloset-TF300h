@@ -14,21 +14,21 @@ import { ProductsListComponent } from './pages/products-list/products-list.compo
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
-// CREAR LAS RUTAS
+// CREAR LAS RUTAS (REVISAR SI ESTAN CON EL MISMO PATH EN EL BACKEND)
 export const routes: Routes = [
     {path: 'Acerca', component: AboutUsComponent, title:'AboutUs'},
     {path: 'Comprar', component: BuyComponent, title:'Buy'},
     {path: 'ResumenCompra', component: CheckoutComponent, title:'Checkout'},
     {path: '', component: HomeComponent, title:'Home'},
-    {path: 'Productos', component: ProductsComponent, title:'Products'},
+    {path: 'productos', component: ProductsComponent, title:'Products'},
     {path: 'ListaProductos', component: ProductsListComponent, title:'ProductsList'},
     {path: 'Ingresar', component: SignUpComponent, title:'SignUp'},
 
     //RUTAS HEREDADAS 
     {path: 'Dashboard', component: DashboardComponent, title:'Dashboard', children:[
         {path: 'Inventario', component: InventoryComponent, title:'Inventory'},
-        {path: 'Ordenes', component: OrdersComponent, title:'Orders'},
-        {path: 'Usuarios', component: UsersComponent, title:'Users'},
+        {path: 'ordenes', component: OrdersComponent, title:'Orders'},
+        {path: 'usuarios', component: UsersComponent, title:'Users'},
     ]},
 
     //RUTA 404 NOT FOUND (USARLO AL FINAL DE LAS RUTAS)
