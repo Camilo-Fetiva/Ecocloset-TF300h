@@ -1,11 +1,4 @@
 // EN ESTE SERVICIO SE GENERA LA LOGICA PARA LA GESTION DEL INICIO DE SESION
-/*
-  Inicio de sesion
-  Obtener token
-  Validacion de roles
-  Identificacion de log o no
-  Cierre de sesion
-*/
 
 // INYECTAR -> inject para las dependencias
 import { Injectable, inject } from '@angular/core';
@@ -38,7 +31,7 @@ export class LoginService {
   public _toastrService = inject (ToastrService); //Varialble para el gestor de mensajes
 
   // Ruta de conexion con el backend (VARIABLE DE ENTORNO)
-  private URL_LOGIN = 'http://localhost:4200/Ingresar'; //Esta ruta parte del backend para el inicio de sesion del usuario
+  private URL_LOGIN = 'http://localhost:3000/login'; //Esta ruta parte del backend para el inicio de sesion del usuario
 
   // LOGICA PARA LAS PETICIONES
   // 1. Inicio de sesion (PETICION POST)

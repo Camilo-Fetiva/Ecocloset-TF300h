@@ -19,7 +19,7 @@ export class AdminService {
 
   //  RUTAS DEL BACKEND
    // RUTA DE CONEXION CON EL BACKEND
-   private URL_ADMIN = 'http://localhost:4200/Dashboard'; // -> En el backend esta como ADMINISTRADOR (REVISAR)
+   private URL_ADMIN = 'http://localhost:3000/administrador'; // -> En el backend esta como ADMINISTRADOR (REVISAR)
 
    // PETICIONES
 
