@@ -5,40 +5,32 @@
     <!-- Aca esta dispuesto el formulario de acceso -->
     <main>
     <!-- BOOTSTRAP FORMS -->
-    <h1>Login</h1>
+    <h1>Regístrate en Ecocloset</h1>
     <div class="row">
         <div class="col">
-          <input type="text" class="form-control" placeholder="Nombre*" aria-label="First name" required>
-        </div>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Apellido*" aria-label="Last name" required>
+            <label for="formGroupExampleInput" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" required>
         </div>
     </div>
 
     <div class="mb-3">
-        <label for="formGroupExampleInput" class="form-label">Correo Electronico*</label>
+        <label for="formGroupExampleInput" class="form-label">Email</label>
         <input type="text" class="form-control" id="formGroupExampleInput" required>
     </div>
     <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Teléfono*</label>
+        <label for="formGroupExampleInput2" class="form-label">Teléfono</label>
         <input type="text" class="form-control" id="formGroupExampleInput2" required>  
     </div>
     <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Contraseña*</label>
+        <label for="formGroupExampleInput2" class="form-label">Crear contraseña</label>
         <input type="text" class="form-control" id="formGroupExampleInput2" required>  
     </div>
+
+    <!-- Subir imagen -->
     <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Dirección*</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" required>  
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Ciudad*</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" required>  
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">País*</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" required>  
-    </div>
+        <label for="formFile" class="form-label">Imagen de perfil</label>
+        <input class="form-control" type="file" id="formFile">
+      </div>
 
     <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
@@ -52,7 +44,7 @@
     <a href="/index.html" style="text-decoration: none"><button class="btn-login" type="submit" onclick="nombreUser()">Login</button></a>
 
     <!-- Opciones de acceso con redes -->
-    <h3>Accede con</h3>
+    <h3>Siguenos en nuestras redes</h3>
 
     <section class="redes">
         <img src="assets\login\img-google.png" alt="Google">
@@ -60,8 +52,7 @@
         <img src="assets\login\img-instagram2.png" alt="Instagram">
         <img src="assets\login\img-facebook2.png" alt="Facebook">
     </section>
-
-    <p>Ya tienes una cuenta? Accede</p>
+    
     </main>
     <!-- Final del formulario de registro -->
 
