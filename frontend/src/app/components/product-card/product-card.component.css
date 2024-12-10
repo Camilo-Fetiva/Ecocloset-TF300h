@@ -1,0 +1,43 @@
+.card-product{
+    background-color:var(--colorBlanco);
+    border-radius: 16px;
+    margin-bottom: 32px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transform: transform 0.3s ease;
+}
+
+.card-product:hover{
+    transform: translateY(-10px); 
+}
+
+.card-product img{
+    width: 90%;
+    margin: 5%;
+}
+
+.producto-texto{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 8px;
+}
+
+.producto-texto h2{
+    text-align: left;
+    color: var(--colorPrimario);
+    font-weight: bolder;
+}
+
+.producto-texto h4{
+    font-weight: bolder;    
+}
+
+.producto-texto button{
+    all: unset;
+    font-size: 24px;
+    background-color: var(--colorPrimario);
+    color: var(--colorBlanco );
+    font-weight: bolder;
+    padding: 8px;
+    border-radius:8px ;
+}
