@@ -1,1 +1,68 @@
-<p>sign-up works!</p>
+<!-- PAG DE LOGIN DE USUARIO -->
+
+<body>
+    
+    <!-- Aca esta dispuesto el formulario de acceso -->
+    <main>
+    <!-- BOOTSTRAP FORMS -->
+    <h1>Login</h1>
+    <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Nombre*" aria-label="First name" required>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Apellido*" aria-label="Last name" required>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Correo Electronico*</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" required>
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Teléfono*</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" required>  
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Contraseña*</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" required>  
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Dirección*</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" required>  
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Ciudad*</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" required>  
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">País*</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" required>  
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+        <label class="form-check-label" for="flexCheckChecked">
+            He leído y acepto las Condiciones generales y la Política de privacidad.
+        </label>
+    </div>
+    <!-- Fin del Bootstrap -->
+
+    <!-- Boton de registro -->
+    <a href="/index.html" style="text-decoration: none"><button class="btn-login" type="submit" onclick="nombreUser()">Login</button></a>
+
+    <!-- Opciones de acceso con redes -->
+    <h3>Accede con</h3>
+
+    <section class="redes">
+        <img src="assets\login\img-google.png" alt="Google">
+        <img src="assets\login\img-apple.png" alt="Apple">
+        <img src="assets\login\img-instagram2.png" alt="Instagram">
+        <img src="assets\login\img-facebook2.png" alt="Facebook">
+    </section>
+
+    <p>Ya tienes una cuenta? Accede</p>
+    </main>
+    <!-- Final del formulario de registro -->
+
+</body>
