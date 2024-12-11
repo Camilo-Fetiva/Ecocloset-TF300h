@@ -5,10 +5,11 @@ import mongoose from "mongoose";
 
 //2.Plantilla de datos definida como SCHEMA -> esquema de datos solicitado a guardar en la base de datos
 const userSchema = new mongoose.Schema({
-    fullName:{type: String, required: true}, //Crear el tipo de dato dentro del esquema, en este caso el nombre
-    email:{type: String, required: true, unique:true},
-    phone: {type: Number, required: true, unique:true},
-    password:{type: String, required: true},
+    Nombre:{type: String, required: true}, //Crear el tipo de dato dentro del esquema, en este caso el nombre
+    Email:{type: String, required: true, unique:true},
+    Telefono: {type: Number, required: true, unique:true},
+    Contraseña:{type: String, required: true},
+    Imagen: {type: String, required: true},
     roleUser: {type: String, default: 'user'}
 });
 
