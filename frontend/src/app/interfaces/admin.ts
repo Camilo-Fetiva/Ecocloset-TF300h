@@ -1,8 +1,10 @@
 export interface Admin {
 
     // Basado en el modelo de datos de ADMIN
-    email:string;
-    password:string;
-    image:string;
+    Nombre:string;
+    Correo:string;
+    Telefono: number;
+    Contrasena:string;
+    Imagen: string;
     roleUser?:string;
 }

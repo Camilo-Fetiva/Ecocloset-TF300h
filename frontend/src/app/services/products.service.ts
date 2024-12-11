@@ -33,11 +33,11 @@ export class ProductsService {
   // PETICION PUT
   putProducts(productActualized:Products, idForUpdate:string){
     // Para actualizar se necesita el body y el ID del producto
-    return this._httpClient.put(this.URL_PRODUCTS + '/actualizar' + idForUpdate, productActualized);
+    return this._httpClient.put(this.URL_PRODUCTS + '/actualizar/' + idForUpdate, productActualized);
   }
 
   // PETICION DELETE
   deleteProducts(idForDelete: string){
-    return this._httpClient.delete(this.URL_PRODUCTS + '/eliminar' + idForDelete)
+    return this._httpClient.delete(this.URL_PRODUCTS + '/eliminar/' + idForDelete)
   }
 }

@@ -20,4 +20,4 @@ orderRouter.get ('/obtener', authToken('admin'), getOrder);
 orderRouter.delete ('/eliminar/:id', authToken('admin'), deleteOrderById);
 
 // 3.4 Ruta para la peticion PUT
-orderRouter.put ('/actualizar', authToken('admin'), putOrderById);
+orderRouter.put ('/actualizar/:id', authToken('admin'), putOrderById);

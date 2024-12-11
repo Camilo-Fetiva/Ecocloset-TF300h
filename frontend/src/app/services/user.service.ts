@@ -33,12 +33,12 @@ export class UserService {
   // PETICION PUT
   putUsers(userActualized:User, idForUpdate:string){
     // Para actualizar se necesita el body y el ID del usuario
-    return this._httpClient.put(this.URL_USERS + '/actualizar' + idForUpdate, userActualized);
+    return this._httpClient.put(this.URL_USERS + '/actualizar/' + idForUpdate, userActualized);
   }
 
   // PETICION DELETE
   deleteUsers(idForDelete: string){
-    return this._httpClient.delete(this.URL_USERS + '/eliminar' + idForDelete)
+    return this._httpClient.delete(this.URL_USERS + '/eliminar/' + idForDelete)
   }
 
 }

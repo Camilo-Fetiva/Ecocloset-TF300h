@@ -33,11 +33,11 @@ export class OrdersService {
   // PETICION PUT
   putOrders(orderActualized:Orders, idForUpdate:string){
     // Para actualizar se necesita el body y el ID del producto
-    return this._httpClient.put(this.URL_ORDERS + '/actualizar' + idForUpdate, orderActualized);
+    return this._httpClient.put(this.URL_ORDERS + '/actualizar/' + idForUpdate, orderActualized);
   }
 
   // PETICION DELETE
   deleteOrders(idForDelete: string){
-    return this._httpClient.delete(this.URL_ORDERS + '/eliminar' + idForDelete)
+    return this._httpClient.delete(this.URL_ORDERS + '/eliminar/' + idForDelete)
   }
 }

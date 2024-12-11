@@ -36,11 +36,11 @@ export class AdminService {
   // PETICION PUT
   putAdmin(administradorActualized:Admin, idForUpdate:string){
     // Para actualizar se necesita el body y el ID del producto
-    return this._httpClient.put(this.URL_ADMIN + '/actualizar' + idForUpdate, administradorActualized);
+    return this._httpClient.put(this.URL_ADMIN + '/actualizar/' + idForUpdate, administradorActualized);
   }
 
   // PETICION DELETE
   deleteAdmin(idForDelete: string){
-    return this._httpClient.delete(this.URL_ADMIN + '/eliminar' + idForDelete)
+    return this._httpClient.delete(this.URL_ADMIN + '/eliminar/' + idForDelete)
   }
 }

@@ -57,7 +57,7 @@ export class LoginService {
       const tokenDecodificado: any = jwtDecode(token);
 
       // CONDICIONAL TERNARIO
-      return tokenDecodificado.isAdmin? true : false;
+      return tokenDecodificado.role === 'admin'?  true : false;
 
     }else{
       console.error('No existe token');
