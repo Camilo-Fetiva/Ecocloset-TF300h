@@ -4,7 +4,7 @@
     background-image: url(/assets/Home/img-banner.png);
     background-size: cover;
     background-position: center;
-    margin: 16px;
+    margin-bottom: 80px;
     padding: 16px;
     border-radius: 16px;
 }
@@ -135,6 +135,7 @@
     margin: 8px 0;
 }
 
+
 /* Aca van los cuadros de color */
 .divisor-color{
     display: flex;
@@ -184,10 +185,16 @@
     
 }
 
+.categorias{
+    margin-top: 120px;
+}
+
 /* Esta es la seccion de las categorias */
 #carouselExampleCaptions{
-    margin: 16px;
+    margin: 24px;
     height: 25%;
+    margin-bottom: 120px;
+    
 }
 
 #carouselExampleCaptions h5{
@@ -321,6 +328,10 @@
     font-weight: bolder;
     padding: 8px;
     border-radius:8px ;
+}
+
+.nuevos{
+    margin-top: 120px;
 }
 
 /* Media screen para las medidas de tablet */
