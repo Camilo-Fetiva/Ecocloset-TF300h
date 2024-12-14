@@ -3,10 +3,13 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { RouterLink } from '@angular/router';
 
+// Importar la card
+import { ProductCardComponent } from '../../components/product-card/product-card.component';
+
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterOutlet, RouterLink,], //<- USO EN EL COMPONENT
+  imports: [RouterOutlet, RouterLink, ProductCardComponent], //<- USO EN EL COMPONENT
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
