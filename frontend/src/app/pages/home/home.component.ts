@@ -6,6 +6,7 @@ import { RouterLink } from '@angular/router';
 // Importar la card
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
 
+
 @Component({
   selector: 'app-home',
   standalone: true,
