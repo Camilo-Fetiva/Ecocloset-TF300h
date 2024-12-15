@@ -1,2 +1,16 @@
 <p>product-card works!</p>
 
+<!-- NgFor recorre elemento de un ARRAY y escoge el dato especifico-->
+<div *ngFor="let producto of allProducts"> 
+
+<!-- CARD DE PRODUCTO -->
+
+<section class="card-product">
+    <img src={{producto.Imagen}} alt="producto">
+      <section class="producto-texto">
+        <h2>{{producto.Coleccion}}</h2>
+        <h3>{{producto.Nombre}}</h3>
+        <h4>{{producto.Precio}}</h4>
+          <a routerLink="/Productos" style="text-decoration: none"><button>Ver producto</button></a>
+      </section>
+  </section>

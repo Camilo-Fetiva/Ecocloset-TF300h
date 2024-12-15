@@ -21,13 +21,13 @@ export async function loginUser(request, response){
 
         // VALIDACION usuario existe
         let userFound = await userModel.findOne({
-            email: emailLogin,
+            Correo: emailLogin,
         });
 
         let adminFound = null;
         if(!userFound) {
             adminFound = await adminModel.findOne({
-            email: emailLogin,
+            Correo: emailLogin,
             });
         }
 
@@ -41,7 +41,7 @@ export async function loginUser(request, response){
 
         // VALIDACION DE LA CONTRASENA -> comparar la contrasena
 
-        let isValidPassword = await bcrypt.compare(passwordLogin, user.password);
+        let isValidPassword = await bcrypt.compare(passwordLogin, user.Contrasena);
         
 
         // QUE OCURRE SI LA CONTRASENA ES INCORRECTA
