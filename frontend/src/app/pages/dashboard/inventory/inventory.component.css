@@ -97,6 +97,10 @@ main{
     text-align: center;
 }
 
+.productos-texto h3{
+    margin: 16px 0;
+}
+
 .boton-producto{
     display: flex;
     gap: 16px;
@@ -126,5 +130,5 @@ main{
 }
 .table-dark{
     background-color: var(--colorPrimario);
-    
+
 }

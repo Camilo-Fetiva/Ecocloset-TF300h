@@ -27,8 +27,8 @@ export const routes: Routes = [
     //RUTAS HEREDADAS 
     {path: 'Dashboard', component: DashboardComponent, title:'Dashboard', children:[
         {path: 'Inventario', component: InventoryComponent, title:'Inventory'},
-        {path: 'ordenes', component: OrdersComponent, title:'Orders'},
-        {path: 'usuarios', component: UsersComponent, title:'Users'},
+        {path: 'Ordenes', component: OrdersComponent, title:'Orders'},
+        {path: 'Usuarios', component: UsersComponent, title:'Users'},
     ]},
 
     //RUTA 404 NOT FOUND (USARLO AL FINAL DE LAS RUTAS)
