@@ -4,7 +4,7 @@ import { Routes } from '@angular/router';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { BuyComponent } from './pages/buy/buy.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { DashboardComponent } from './pages/dashboard/home/dashboard.component';
 import { InventoryComponent } from './pages/dashboard/inventory/inventory.component';
 import { OrdersComponent } from './pages/dashboard/orders/orders.component';
 import { UsersComponent } from './pages/dashboard/users/users.component';
