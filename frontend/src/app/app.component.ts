@@ -11,7 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, NavBarComponent, FooterComponent], //<- USO EN EL COMPONENT
+  imports: [RouterOutlet, RouterLink,], //<- USO EN EL COMPONENT
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

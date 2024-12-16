@@ -7,10 +7,14 @@ import { RouterLink } from '@angular/router';
 // Importar la card
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
 
+// Importar el NAVBAR y el FOOTER
+import { NavBarComponent } from '../../components/nav-bar/nav-bar.component';
+import { FooterComponent } from '../../components/footer/footer.component';
+
 @Component({
   selector: 'app-products-list',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, ProductCardComponent], //<- USO EN EL COMPONENT
+  imports: [RouterOutlet, RouterLink, ProductCardComponent, NavBarComponent, FooterComponent], //<- USO EN EL COMPONENT
   templateUrl: './products-list.component.html',
   styleUrl: './products-list.component.css'
 })
