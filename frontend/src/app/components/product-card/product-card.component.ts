@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 // IMPORTAR EL SERVICIO DE CONEXION
 import { ProductsService } from '../../services/products.service';
 
+// IMPORTAR EL MODAL
+import { ProductSpecificComponent } from '../product-specific/product-specific.component';
+
 // IMPOTAR EL INJECT
 import { inject } from '@angular/core';
 
@@ -16,7 +19,7 @@ import { NgFor } from '@angular/common';
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [NgFor], //<- USO EN EL COMPONENT
+  imports: [NgFor, ProductSpecificComponent], //<- USO EN EL COMPONENT
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css'
 })

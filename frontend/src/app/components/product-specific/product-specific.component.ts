@@ -8,5 +8,25 @@ import { Component } from '@angular/core';
   styleUrl: './product-specific.component.css'
 })
 export class ProductSpecificComponent {
+  abrir=document.getElementById('abrir-modal');
+  popup_container=document.getElementById('popup_container');
+  salir=document.getElementById('salir');
 
+  modal(){
+    this.abrir?.addEventListener('click',()=>{
+      this.popup_container?.classList.add('show');
+    });
+
+    this.salir?.addEventListener('click',()=>{
+      this.popup_container?.classList.add('show')
+    });
+  }
+
+  // this.abrir.addEventListener('click', () =>{
+  //     this.popup_container.classList.add('show');
+  // });
+
+  // this.salir.addEventListener('click', () =>{
+  //     this.popup_container.classList.remove('show');
+  // });
 }
