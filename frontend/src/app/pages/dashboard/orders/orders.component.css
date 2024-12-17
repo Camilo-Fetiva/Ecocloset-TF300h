@@ -148,6 +148,13 @@ main {
 
 .table-dark th {
     padding: 12px;
+    border-left: 8px solid white;
+
+}
+
+.tabla-ordenes td {
+    background-color: #EEEFEF;
+    border: 8px solid white;
 }
 
 /* Nuevas clases para la sección de órdenes */
