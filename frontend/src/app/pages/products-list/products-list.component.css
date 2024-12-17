@@ -166,8 +166,8 @@
 
 /* Seccion de lista de productos */
 .tarjeta{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
     margin: 32px;
     gap: 32px;
 }
@@ -241,8 +241,6 @@
 
     /* Seccion de lista de productos */
     .tarjeta{
-        display: flex;
-        flex-direction: row;
         margin: 32px;
         gap: 60px;
     }

@@ -19,5 +19,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
   styleUrl: './products-list.component.css'
 })
 export class ProductsListComponent {
-
+  handleClick(){
+    console.log('Identificar el ID')
+  }
 }

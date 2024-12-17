@@ -15,6 +15,7 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { Login } from './interfaces/login';
 import { LoginComponent } from './pages/login/login.component';
+import { AdminComponent } from './pages/dashboard/admin/admin.component';
 
 // CREAR LAS RUTAS (REVISAR SI ESTAN CON EL MISMO PATH EN EL BACKEND)
 export const routes: Routes = [
@@ -30,8 +31,9 @@ export const routes: Routes = [
     //RUTAS HEREDADAS 
     {path: 'Dashboard', component: DashboardComponent, title:'Dashboard', children:[
         {path: 'Inventario', component: InventoryComponent, title:'Inventory'},
-        {path: 'ordenes', component: OrdersComponent, title:'Orders'},
-        {path: 'usuarios', component: UsersComponent, title:'Users'},
+        {path: 'Ordenes', component: OrdersComponent, title:'Orders'},
+        {path: 'Usuarios', component: UsersComponent, title:'Users'},
+        {path: '', component: AdminComponent,},
     ]},
 
     //RUTA 404 NOT FOUND (USARLO AL FINAL DE LAS RUTAS)

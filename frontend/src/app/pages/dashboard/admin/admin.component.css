@@ -79,56 +79,109 @@ main{
     margin-bottom: 40px;
 }
 
-.titulo h1{
-    font-weight: bolder;
-    color: var(--colorSecundario);
-}
-
-.productos-vendidos{
+.categorias-admin{
     display: flex;
-    margin: auto;
-    padding: 16px;
+    flex-direction: row;
     width: 75vw;
+    justify-content: center;
+    gap: 1%;
 }
 
-.productos-texto{
-    width: 100%;
-    margin: 0 8px;
-    text-align: center;
-}
-
-.productos-texto h4{
-    margin: 16px 0;
-}
-
-.boton-producto{
-    display: flex;
-    gap: 16px;
-    margin: 60px 0;
-}
-
-.boton-producto h2{
-    font-weight: bold;
-    color: var(--colorSecundario);
-}
-
-.boton-anadir{
+.boton-config{
     display: flex;
     text-align: center;
     justify-content: start;
+    background-color: var(--colorSecundario);
     padding: 8px;
+    border-radius: 8px;
     gap: 16px;
-    font-weight: bolder;
+    font-weight: bold;
     color: var(--colorBlanco);
     text-decoration: none;
+}
+
+.card-title{
+    color: var(--colorSecundario);
+    font-weight: bolder;
+}
+
+.cifras-admin{
+    display: flex;
+}
+
+.cifras-totales{
     background-color: var(--colorSecundario);
+    padding: 16px;
+    border-radius: 16px;
+    margin: 16px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.cifras-totales h1{
+    color: var(--colorBlanco);
+    font-weight: bolder;
+}
+
+.cifras-totales h3{
+    color: var(--colorBlanco);
+}
+
+.boton-cifras{
+    display: flex;
+    text-align: center;
+    justify-content: start;
+    background-color: var(--colorSecundario);
+    padding: 8px;
+    border-radius: 8px;
+    gap: 16px;
+    font-weight: bold;
+    color: var(--colorBlanco);
+    text-decoration: none;
+}
+
+.boton-cifras h5{
+    font-weight: bolder;
+}
+
+.cifras-destacadas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 50%;
+    margin-top: 16px;
+}
+
+.card-cifras{
+    background-color: rgb(226, 223, 223);
+    padding: 16px;
+    width: 100%;
+    margin: 4px 8px;
+    color: var(--colorSecundario);
     border-radius: 8px;
 }
 
-.tabla-inventario{
+.boton-numero{
+    display: flex;
     text-align: center;
-}
-.table-dark{
+    justify-content: start;
     background-color: var(--colorPrimario);
-    
+    padding: 4px;
+    border-radius: 8px;
+    gap: 16px;
+    color: var(--colorBlanco);
+    text-decoration: none;
+}
+
+.card-cifras h5{
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+.card-cifras h4{
+    font-weight: bolder;
 }
