@@ -1,0 +1,130 @@
+main{
+    display: flex;
+}
+
+.admin-categorias{
+    background-color: var(--colorPrimario);
+    width: 20%;
+    height: 100vh;
+    padding: 16px;
+}
+
+.admin-texto{
+    text-align: center;
+    color: var(--colorBlanco);
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.rutas{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.boton-active{
+    display: flex;
+    text-align: center;
+    justify-content: start;
+    padding: 8px;
+    gap: 16px;
+    font-weight: bolder;
+    color: var(--colorBlanco);
+    text-decoration: none;
+    background-color: var(--colorSecundario);
+    border-radius: 8px;
+}
+
+.boton-disable{
+    display: flex;
+    text-align: center;
+    justify-content: start;
+    padding: 8px;
+    gap: 16px;
+    font-weight: bolder;
+    color: var(--colorBlanco);
+    text-decoration: none;
+}
+
+.logo{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.boton-salir{
+    display: flex;
+    text-align: center;
+    justify-content: start;
+    background-color: brown;
+    padding: 8px;
+    margin-top: 80px;
+    border-radius: 8px;
+    gap: 16px;
+    font-weight: bold;
+    color: var(--colorBlanco);
+    text-decoration: none;
+}
+
+.informacion{
+    margin: 24px;
+}
+
+.titulo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.titulo h1{
+    font-weight: bolder;
+    color: var(--colorSecundario);
+}
+
+.productos-vendidos{
+    display: flex;
+    margin: auto;
+    padding: 16px;
+    width: 75vw;
+}
+
+.productos-texto{
+    width: 100%;
+    margin: 0 8px;
+    text-align: center;
+}
+
+.boton-producto{
+    display: flex;
+    gap: 16px;
+    margin: 60px 0;
+}
+
+.boton-producto h2{
+    font-weight: bold;
+    color: var(--colorSecundario);
+}
+
+.boton-anadir{
+    display: flex;
+    text-align: center;
+    justify-content: start;
+    padding: 8px;
+    gap: 16px;
+    font-weight: bolder;
+    color: var(--colorBlanco);
+    text-decoration: none;
+    background-color: var(--colorSecundario);
+    border-radius: 8px;
+}
+
+.tabla-inventario{
+    text-align: center;
+}
+.table-dark{
+    background-color: var(--colorPrimario);
+    
+}

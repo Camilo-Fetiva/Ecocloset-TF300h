@@ -20,4 +20,4 @@ adminRouter.get ('/obtener', getAdmin);
 adminRouter.delete ('/eliminar/:id', authToken('admin'), deleteAdminById);
 
 // 3.4 Ruta para la peticion PUT
-adminRouter.put ('/actualizar', authToken('admin'), putAdminById);
+adminRouter.put ('/actualizar/:id', authToken('admin'), putAdminById);

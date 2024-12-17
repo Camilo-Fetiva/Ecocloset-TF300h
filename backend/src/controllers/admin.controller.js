@@ -11,13 +11,13 @@ export const postAdmin = async (request, response) =>{
     try {
 
         // Deestructuracion ->  Permite acceder a cada una de las variables suministradas por el usuario en el Schema de datos
-        const {email, password, image} = request.body;
+        const {Nombre, Correo, Telefono, Contrasena, Imagen} = request.body;
         
         // encriptar la contrasena
         // hash -> metodo para encriptar la contrasena
-        const codedPassword = await bcrypt.hash(password, 10);
+        const codedPassword = await bcrypt.hash(Contrasena, 10);
 
-        const newAdmin = await adminModel.create({email, password:codedPassword, image});
+        const newAdmin = await adminModel.create({Nombre, Correo, Telefono,  Contrasena:codedPassword, Imagen});
 
         return response.status(201).json({
             mensaje: "Administrador creado satisfactoriamente",
@@ -27,7 +27,7 @@ export const postAdmin = async (request, response) =>{
     } catch (error) {
         return response.status(400).json({
             mensaje: 'Error al crear un administrador',
-            problema: error
+            problema: error || error.message
         });
     }
 }

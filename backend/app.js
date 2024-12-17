@@ -8,11 +8,15 @@ import { orderRouter } from './src/routes/order.routes.js';
 import { loginRouter } from './src/routes/login.routes.js';
 import { adminRouter } from './src/routes/admin.routes.js';
 
+// Dependencia para la conexion con el frontend
+import cors from 'cors';
+
 
 // 2. CONFIGURAR EL USO DEL SERVIDOR
 const app = express();
 dotenv.config();
 const port = process.env.PORT
+app.use(cors()); // <- Uso para utilizar el backend en el navegador
 
 app.use(express.json()); //Usar formato JSON, CREAR y ACTUALIZAR datos
 app.use ( '/productos', productRouter);
