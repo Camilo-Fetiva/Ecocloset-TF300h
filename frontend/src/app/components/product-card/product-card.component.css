@@ -9,11 +9,19 @@
     transform: translateY(-10px); 
 }
 
-.card-product img{
-    width: 90%;
+.cover-img{
     height: 300px;
-    margin: 5%;
     border-radius: 16px;
+    margin: 5%;
+    display: flex; /* Asegura que el contenedor use un modelo de caja flexible */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+}
+
+.cover-img img{
+    max-width: 200%;
+    object-fit: cover;
 }
 
 .producto-texto{
@@ -41,8 +49,4 @@
     font-weight: bolder;
     padding: 8px;
     border-radius:8px ;
-}
-
-@media screen {
-    
 }

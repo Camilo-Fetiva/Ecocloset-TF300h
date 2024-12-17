@@ -6,7 +6,10 @@
 
 <div class="row">
     <section class="card-product">
-      <img src={{producto.Imagen}} alt="producto">
+      <section class="cover-img">
+        <img src={{producto.Imagen}} alt="producto" object-fit="cover-img">
+      </section>
+      
         <section class="producto-texto">
           <h2>{{producto.Nombre}}</h2>
           <h3>{{producto.Coleccion}}</h3>
