@@ -11,16 +11,18 @@
 
 .cover-img{
     height: 300px;
+    width: 300px;
     border-radius: 16px;
     margin: 5%;
-    display: flex; /* Asegura que el contenedor use un modelo de caja flexible */
-    justify-content: center; /* Centra la imagen horizontalmente */
-    align-items: center; /* Centra la imagen verticalmente */
-    overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .cover-img img{
     max-width: 200%;
+    max-height: 200%;
     object-fit: cover;
 }
 

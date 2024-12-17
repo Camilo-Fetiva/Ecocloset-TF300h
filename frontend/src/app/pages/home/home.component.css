@@ -350,6 +350,14 @@ overflow-x: hidden;
         margin: 32px auto;
     }
 
+    .tarjeta{
+        display: grid;
+        grid-template-columns: 45% 45%;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; 
+    }
+
     
 }
 
