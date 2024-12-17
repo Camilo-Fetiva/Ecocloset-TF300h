@@ -13,6 +13,8 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ProductsListComponent } from './pages/products-list/products-list.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { Login } from './interfaces/login';
+import { LoginComponent } from './pages/login/login.component';
 
 // CREAR LAS RUTAS (REVISAR SI ESTAN CON EL MISMO PATH EN EL BACKEND)
 export const routes: Routes = [
@@ -23,6 +25,7 @@ export const routes: Routes = [
     {path: 'ListaProductos', component: ProductsListComponent, title:'ProductsList'},
     {path: 'Productos', component: ProductsComponent, title:'Products'},
     {path: 'Ingresar', component: SignUpComponent, title:'SignUp'},
+    {path: 'Login', component: LoginComponent, title: 'Login'},
 
     //RUTAS HEREDADAS 
     {path: 'Dashboard', component: DashboardComponent, title:'Dashboard', children:[
