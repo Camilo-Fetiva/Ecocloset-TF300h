@@ -1,0 +1,19 @@
+.tabla-inventario {
+    text-align: center;
+}
+
+.table-dark {
+    background-color: var(--colorPrimario);
+    color: var(--colorBlanco);
+}
+
+.table-dark th {
+    padding: 12px;
+    border-left: 8px solid white;
+
+}
+
+.tabla-ordenes td {
+    background-color: #EEEFEF;
+    border: 8px solid white;
+}

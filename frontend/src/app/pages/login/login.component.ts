@@ -1,6 +1,5 @@
 import { NavBarComponent } from '../../components/nav-bar/nav-bar.component';
 import { FooterComponent } from '../../components/footer/footer.component';
-
 import { Component } from '@angular/core';
 
 @Component({

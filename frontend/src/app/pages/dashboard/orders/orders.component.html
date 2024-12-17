@@ -1,3 +1,5 @@
+<!-- NgFor recorre elemento de un ARRAY y escoge el dato especifico-->
+<div *ngFor="let producto of allProducts" class="col">
 <main>
     <!-- BARRA LATERAL -->
     <section class="admin-categorias">
@@ -39,7 +41,7 @@
     <!-- Sección de Órdenes -->
     <section class="informacion">
         <section class="titulo">
-            <img src="/assets/dashboard/home/img-icono-ordenes.png" alt="icono">
+            <img src="/assets/dashboard/home/img-icono-home2.png" alt="icono">
             <h1>Ordenes</h1>
         </section>
 
@@ -76,45 +78,9 @@
 
         <h2>Lista de órdenes</h2>
         <section class="tabla-ordenes">
-            <table class="table">
-                <thead class="table-dark">
-                    <th scope="col">ID</th>
-                    <th scope="col"># Orden</th>
-                    <th scope="col">Usuario</th>
-                    <th scope="col">Producto</th>
-                    <th scope="col">Precio</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1348714815DNS23132</td>
-                        <td>#6</td>
-                        <td>usuario1</td>
-                        <td>producto1213124</td>
-                        <td>$139.000</td>
-                    </tr>
-                    <tr>
-                        <td>1348714815DNS23132</td>
-                        <td>#5</td>
-                        <td>usuario2</td>
-                        <td>producto1213124</td>
-                        <td>$139.000</td>
-                    </tr>
-                    <tr>
-                        <td>1348714815DNS23132</td>
-                        <td>#4</td>
-                        <td>usuario3</td>
-                        <td>producto1213124</td>
-                        <td>$139.000</td>
-                    </tr>
-                    <tr>
-                        <td>1348714815DNS23132</td>
-                        <td>#3</td>
-                        <td>usuario4</td>
-                        <td>producto1213124</td>
-                        <td>$139.000</td>
-                    </tr>
-                </tbody>
-            </table>
+             <app-table>
+
+             </app-table>
         </section>
     </section>
 </main>
