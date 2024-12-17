@@ -3,9 +3,6 @@ import { Component } from '@angular/core';
 // IMPORTAR EL SERVICIO DE CONEXION
 import { ProductsService } from '../../services/products.service';
 
-// IMPORTAR EL MODAL
-import { ProductSpecificComponent } from '../product-specific/product-specific.component';
-
 // IMPOTAR EL INJECT
 import { inject } from '@angular/core';
 
@@ -19,7 +16,7 @@ import { NgFor } from '@angular/common';
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [NgFor, ProductSpecificComponent], //<- USO EN EL COMPONENT
+  imports: [NgFor], //<- USO EN EL COMPONENT
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css'
 })
@@ -43,14 +40,26 @@ export class ProductCardComponent {
           // Guardar los datos en la variable
           this.allProducts = res.datos; 
           console.log (this.allProducts);
+
+          // Llamar al método para mezclar los productos de forma aleatoria
+        this.shuffleProducts();
         },
         error: (error: any) =>{
           // Cuando sale incorrecto
           console.log (error);
         }
+        
       }
     );
-  };
+  }
+
+  // Método para mezclar el arreglo de productos de forma aleatoria (Fisher-Yates Shuffle)
+  shuffleProducts() {
+    for (let i = this.allProducts.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [this.allProducts[i], this.allProducts[j]] = [this.allProducts[j], this.allProducts[i]]; // Swap
+    }
+  }
 
   // PROBAR EL TRAER PRODUCTO
   handleClick(id:string | undefined){
