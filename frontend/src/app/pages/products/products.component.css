@@ -6,8 +6,8 @@
 }
 
 .tarjeta{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
     margin: 60px;
     gap: 60px;
 }

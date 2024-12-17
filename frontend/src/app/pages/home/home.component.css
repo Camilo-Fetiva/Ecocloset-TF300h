@@ -1,3 +1,7 @@
+*{
+overflow-x: hidden;
+}
+
 /* Aca empieza el main */
 /* Esta seccion es del hero */
 .hero{
@@ -118,10 +122,7 @@
     text-align: center;
 }
 
-.designers img{
-    width: 100%;
-    height: auto;
-}
+
 
 .designers h1{
     font-size: 48px;
@@ -133,6 +134,10 @@
     font-weight: bolder;
     color: var(--colorTexto);
     margin: 8px 0;
+}
+
+.designers img{
+    width: 90%;
 }
 
 
@@ -391,7 +396,7 @@
 
     .designers img{
         margin-right: 24px;
-        width: 40%;
+        width: 250%;
     }
 
     /* Seccion de Categorias */
@@ -413,11 +418,9 @@
 
     /* Seccion de lista de productos */
     .tarjeta{
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
         margin: 32px;
-        gap: 60px;
+        gap: 40px;
     }
-
-
 }
