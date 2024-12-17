@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.admin-categorias {
+    background-color: var(--colorPrimario);
+    width: 20%;
+    height: 100vh;
+    padding: 16px;
+}
+
+.admin-texto {
+    text-align: center;
+    color: var(--colorBlanco);
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.rutas {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.boton-active {
+    display: flex;
+    text-align: center;
+    justify-content: start;
+    padding: 8px;
+    gap: 16px;
+    font-weight: bolder;
+    color: var(--colorBlanco);
+    text-decoration: none;
+    background-color: var(--colorSecundario);
+    border-radius: 8px;
+}
+
+.boton-disable {
+    display: flex;
+    text-align: center;
+    justify-content: start;
+    padding: 8px;
+    gap: 16px;
+    font-weight: bolder;
+    color: var(--colorBlanco);
+    text-decoration: none;
+}
+
+.logo {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.boton-salir {
+    display: flex;
+    text-align: center;
+    justify-content: start;
+    background-color: brown;
+    padding: 8px;
+    margin-top: 80px;
+    border-radius: 8px;
+    gap: 16px;
+    font-weight: bold;
+    color: var(--colorBlanco);
+    text-decoration: none;
+}
+
+.informacion {
+    flex: 1;
+    margin: 24px;
+    overflow-y: auto;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.titulo h1 {
+    font-weight: bolder;
+    color: var(--colorSecundario);
+}
+
+.productos-vendidos {
+    display: flex;
+    margin: auto;
+    padding: 16px;
+    width: 75vw;
+}
+
+.productos-texto {
+    width: 100%;
+    margin: 0 8px;
+    text-align: center;
+}
+
+.boton-producto {
+    display: flex;
+    gap: 16px;
+    margin: 60px 0;
+}
+
+.boton-producto h2 {
+    font-weight: bold;
+    color: var(--colorSecundario);
+}
+
+.boton-anadir {
+    display: flex;
+    text-align: center;
+    justify-content: start;
+    padding: 8px;
+    gap: 16px;
+    font-weight: bolder;
+    color: var(--colorBlanco);
+    text-decoration: none;
+    background-color: var(--colorSecundario);
+    border-radius: 8px;
+}
+
+.tabla-inventario {
+    text-align: center;
+}
+
+.table-dark {
+    background-color: var(--colorPrimario);
+    color: var(--colorBlanco);
+}
+
+.table-dark th {
+    padding: 12px;
+}
+
+/* Nuevas clases para la sección de órdenes */
+.ultimas-ordenes {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px auto;
+    gap: 16px;
+}
+
+.orden-card {
+    background-color: var(--colorBlanco);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.orden-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.orden-detalle p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.tabla-ordenes {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.table-dark th {
+    padding: 12px;
+    background-color: var(--colorPrimario);
+}
+
+/* Media Queries para dispositivos */
+
+@media (max-width: 390px) {
+    main {
+        flex-direction: column;
+    }
+
+    .admin-categorias {
+        width: 100%;
+        height: auto;
+        padding: 8px;
+    }
+
+    .rutas {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .boton-disable, .boton-active, .boton-salir {
+        justify-content: center;
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .informacion {
+        margin: 8px;
+    }
+
+    .productos-vendidos {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .productos-texto {
+        margin-bottom: 16px;
+    }
+
+    .tabla-inventario table {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-categorias {
+        width: 25%;
+        padding: 12px;
+    }
+
+    .rutas {
+        gap: 16px;
+    }
+
+    .boton-disable, .boton-active {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .productos-vendidos {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .productos-texto {
+        width: 45%;
+    }
+
+    .tabla-inventario table {
+        font-size: 14px;
+    }
+
+    .boton-producto {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .boton-producto h2 {
+        text-align: center;
+    }
+
+    .admin-texto {
+        margin-top: 16px;
+    }
+
+    .titulo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
