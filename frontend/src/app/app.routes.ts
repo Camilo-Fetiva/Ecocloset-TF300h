@@ -13,7 +13,6 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ProductsListComponent } from './pages/products-list/products-list.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { Login } from './interfaces/login';
 import { LoginComponent } from './pages/login/login.component';
 import { AdminComponent } from './pages/dashboard/admin/admin.component';
 
