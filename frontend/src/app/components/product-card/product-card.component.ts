@@ -49,6 +49,11 @@ export class ProductCardComponent {
     );
   };
 
+  // PROBAR EL TRAER PRODUCTO
+  handleClick(id:string | undefined){
+    console.log('Identificar el ID' + id)
+  }
+
   // Mostarlo al cargar el contenido de la pagina
   // Usar el metodo -> ngOnInit
   ngOnInit(){

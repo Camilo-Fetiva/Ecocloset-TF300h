@@ -13,6 +13,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ProductsListComponent } from './pages/products-list/products-list.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { AdminComponent } from './pages/dashboard/admin/admin.component';
 
 // CREAR LAS RUTAS (REVISAR SI ESTAN CON EL MISMO PATH EN EL BACKEND)
 export const routes: Routes = [
@@ -29,6 +30,7 @@ export const routes: Routes = [
         {path: 'Inventario', component: InventoryComponent, title:'Inventory'},
         {path: 'Ordenes', component: OrdersComponent, title:'Orders'},
         {path: 'Usuarios', component: UsersComponent, title:'Users'},
+        {path: '', component: AdminComponent,},
     ]},
 
     //RUTA 404 NOT FOUND (USARLO AL FINAL DE LAS RUTAS)

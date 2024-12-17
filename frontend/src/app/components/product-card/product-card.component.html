@@ -11,7 +11,7 @@
           <h2>{{producto.Nombre}}</h2>
           <h3>{{producto.Coleccion}}</h3>
           <h4>{{producto.Precio}}</h4>
-            <a routerLink="/Productos" style="text-decoration: none"><button>Ver producto</button></a>
+            <a routerLink="/Productos" style="text-decoration: none"><button (click)="handleClick(producto._id)">Ver producto</button></a>
         </section>
     </section>
 </div> 
