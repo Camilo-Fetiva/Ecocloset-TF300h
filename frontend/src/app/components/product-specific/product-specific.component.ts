@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-// Importar 
-
 @Component({
   selector: 'app-product-specific',
   standalone: true,
@@ -17,11 +15,11 @@ export class ProductSpecificComponent {
   modal(){
     this.abrir?.addEventListener('click',()=>{
       this.popup_container?.classList.add('show');
-    });
+    })
 
     this.salir?.addEventListener('click',()=>{
-      this.popup_container?.classList.add('show')
-    });
+      this.popup_container?.classList.remove('show');
+    })
   }
 
   // this.abrir.addEventListener('click', () =>{

@@ -1,12 +1,17 @@
+<!-- NgFor recorre elemento de un ARRAY y escoge el dato especifico-->
+<div *ngFor="let producto of allProducts" class="col">
+
 <!-- Modal de producto especifico -->
 <section class="popup-container" id="popup_container">
     <section class="popup">
-      <section class="img-modal"></section>
+      <section class="img-modal">
+        <img src={{producto.Imagen}} alt="producto" object-fit="cover-img">
+      </section>
       <section class="info-popup">
-        <h1>nombre-producto</h1>
-        <h2>Coleccion</h2>
-        <h3>Precio</h3>
-        <p>descripcion</p>
+        <h1>{{producto.Nombre}}</h1>
+        <h2>{{producto.Coleccion}}</h2>
+        <h3>{{producto.Precio}}</h3>
+        <p>{{producto.Descripcion}}</p>
         <button id="comprar">Comprar</button>
         <button id="salir">Cerrar</button>
       </section>
