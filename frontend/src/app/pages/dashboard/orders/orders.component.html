@@ -1,42 +1,55 @@
 <!-- NgFor recorre elemento de un ARRAY y escoge el dato especifico-->
 <div *ngFor="let producto of allProducts" class="col">
 <main>
-    <!-- BARRA LATERAL -->
-    <section class="admin-categorias">
-        <section class="admin-texto">
-            <img src="/assets/dashboard/home/img-admin.png" alt="img-administrador">
-            <h3>nombre</h3>
-            <h4>Administrador(a)</h4>
-        </section>
+     <!-- Barra izquierda -->
+     <section class="admin-categorias"> 
+        <!-- CARD DE ADMIN -->
+        <div class="card2">
+            <img src="/assets/dashboard/home/img-admin.png" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">nombreAdmin</h5>
+            <p class="card-text">Administrador(a)</p>
+            </div>
+        </div>
+        <!-- ----------------------------------- -->
 
         <section class="rutas">
-            <section class="boton-disable">
+            <!-- BOTON BOOTSTRAP ACTIVE -->
+            <button type="button" class="btn btn-secondary">
                 <img src="/assets/dashboard/home/img-icono-home.png" alt="icono">
-                <a routerLink="/Dashboard"><h5>Dashboard</h5></a>
-            </section>
-            <section class="boton-disable">
+                <a routerLink="/Dashboard">Dashboard</a></button>
+            <!-- ------------------------ -->
+
+            <!-- BOTON BOOTSTRAP DISABLE -->
+            <button type="button" class="btn btn-secondary">
                 <img src="/assets/dashboard/home/img-icono-inventario.png" alt="icono">
-                <a routerLink="/Dashboard/Inventario"><h5>Inventario</h5></a>
-            </section>
-            <section class="boton-disable">
+                <a routerLink="/Dashboard/Inventario">Inventario</a></button>
+            <!-- ------------------------ -->
+
+            <!-- BOTON BOOTSTRAP DISABLE -->
+            <button type="button" class="btn btn-secondary">
                 <img src="/assets/dashboard/home/img-icono-users.png" alt="icono">
-                <a routerLink="/Dashboard/Usuarios"><h5>Usuarios</h5></a>
-            </section>
-            <section class="boton-active">
+                <a routerLink="/Dashboard/Usuarios">Usuarios</a></button>
+            <!-- ------------------------ -->
+
+            <!-- BOTON BOOTSTRAP DISABLE -->
+            <button type="button" class="btn btn-primary">
                 <img src="/assets/dashboard/home/img-icono-ordenes.png" alt="icono">
-                <h5>Ordenes</h5>
-            </section>
+                Ordenes</button>
+            <!-- ------------------------ -->
         </section>
 
         <section class="logo">
             <img src="/assets/dashboard/home/img-ecocloset.png" alt="logo-ecocloset">
         </section>
 
-        <section class="boton-salir">
+        <!-- BOTON BOOTSTRAP SALIR -->
+        <button type="button" class="btn btn-danger">
             <img src="/assets/dashboard/home/img-icono-salir.png" alt="icono">
-            <h5>Salir</h5>
-        </section>
+            <a routerLink="/">Salir</a></button>
+        <!-- ------------------------ -->
     </section>
+
 
     <!-- Sección de Órdenes -->
     <section class="informacion">
