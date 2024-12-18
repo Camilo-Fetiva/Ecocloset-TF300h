@@ -48,7 +48,6 @@ export class ProductCardComponent {
           // Cuando sale incorrecto
           console.log (error);
         }
-        
       }
     );
   }

@@ -5,6 +5,6 @@ export interface User {
     Correo: string;
     Telefono: number;
     Contrasena: string;
-    Imagen: string;
+    Imagen?: string;
     roleUser?: string;
 }
