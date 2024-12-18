@@ -63,10 +63,10 @@
         <section class="productos-vendidos">
 
             <section class="orden-card">
-                <img src="/assets/dashboard/home/img-admin.png" alt="img-producto">
+                <img src={{producto.Imagen}} alt="img-producto">
                 <div class="orden-detalle">
-                    <p><strong># Orden:</strong> 231412341</p>
-                    <p><strong>Usuario:</strong> producto1213124</p>
+                    <h4><strong>{{producto.Nombre}}</strong></h4>
+                    <h5>{{producto.Precio}}</h5>
                 </div>
             </section>
 
@@ -98,7 +98,7 @@
 
         <section class="boton-producto">
             <button type="button" class="btn btn-primary">
-                <img src="/assets/dashboard/home/img-icono-users.png" alt="icono">
+                <img src="/assets/dashboard/home/img-icono-ordenes.png" alt="icono">
                 Añadir producto</button>
             <h2>Lista de inventario</h2>
         </section>
