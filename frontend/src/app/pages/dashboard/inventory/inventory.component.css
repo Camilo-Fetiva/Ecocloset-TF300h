@@ -78,7 +78,6 @@ a:link, :visited, :hover, :active{
 .informacion{
     flex: 1;
     padding: 24px;
-    border: solid red;
 }
 
 .titulo{
@@ -95,7 +94,6 @@ a:link, :visited, :hover, :active{
 }
 
 .productos-vendidos{
-    border: solid purple;
     display: flex;
     justify-content: space-between;
     margin: 24px 0;
@@ -131,7 +129,6 @@ a:link, :visited, :hover, :active{
     display: flex;
     gap: 16px;
     margin: 32px 0;
-    border: solid salmon;
     align-items: start;
 }
 
