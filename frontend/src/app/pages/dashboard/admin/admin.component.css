@@ -1,10 +1,15 @@
+*{
+    overflow-x: hidden;
+}
+
+
 main{
     display: flex;
+    overflow-x: hidden;
 }
 
 .admin-categorias{
     background-color: var(--colorPrimario);
-    width: 20%;
     height: 100vh;
     padding: 16px;
 }
@@ -79,7 +84,10 @@ a:link, :visited, :hover, :active{
 
 
 .informacion{
-    margin: 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
 }
 
 .titulo{
@@ -87,29 +95,21 @@ a:link, :visited, :hover, :active{
     flex-direction: row;
     width: 100%;
     gap: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
+    color: rgb(0, 23, 58);
+}
+
+.titulo h1{
+    font-weight: bolder;
 }
 
 .categorias-admin{
     display: flex;
     flex-direction: row;
-    width: 75vw;
     justify-content: center;
-    gap: 1%;
+    gap: 3%;
 }
 
-.boton-config{
-    display: flex;
-    text-align: center;
-    justify-content: start;
-    background-color: var(--colorSecundario);
-    padding: 8px;
-    border-radius: 8px;
-    gap: 16px;
-    font-weight: bold;
-    color: var(--colorBlanco);
-    text-decoration: none;
-}
 
 .card-title{
     color: var(--colorSecundario);
@@ -118,13 +118,14 @@ a:link, :visited, :hover, :active{
 
 .cifras-admin{
     display: flex;
+    gap: 24px;
 }
 
 .cifras-totales{
     background-color: var(--colorSecundario);
     padding: 16px;
     border-radius: 16px;
-    margin: 16px;
+    margin: 16px 0;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -145,33 +146,28 @@ a:link, :visited, :hover, :active{
     display: flex;
     text-align: center;
     justify-content: start;
-    background-color: var(--colorSecundario);
     padding: 8px;
-    border-radius: 8px;
-    gap: 16px;
-    font-weight: bold;
     color: var(--colorBlanco);
-    text-decoration: none;
 }
 
-.boton-cifras h5{
+.boton-cifras h4{
     font-weight: bolder;
+    margin-left: 16px;
 }
 
 .cifras-destacadas{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 16px;
     width: 50%;
-    margin-top: 16px;
+    margin: 16px 0;
 }
 
 .card-cifras{
     background-color: rgb(226, 223, 223);
-    padding: 16px;
+    padding: 12px;
     width: 100%;
-    margin: 4px 8px;
     color: var(--colorSecundario);
     border-radius: 8px;
 }
