@@ -54,7 +54,7 @@
     <!-- Sección de Órdenes -->
     <section class="informacion">
         <section class="titulo">
-            <img src="/assets/dashboard/home/img-icono-home2.png" alt="icono">
+            <img src="/assets/dashboard/home/img-icono-home2.png" alt="icono" height="50px">
             <h1>Ordenes</h1>
         </section>
 
@@ -91,9 +91,16 @@
 
         <h2>Lista de órdenes</h2>
         <section class="tabla-ordenes">
-             <app-table>
-
-             </app-table>
+            <table class="table">
+                <thead class="table-dark">
+                    <th scope="col">ID</th>
+                    <th scope="col"># Orden</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio</th>
+                </thead>
+            </table>
+            <app-table></app-table>
         </section>
     </section>
 </main>
