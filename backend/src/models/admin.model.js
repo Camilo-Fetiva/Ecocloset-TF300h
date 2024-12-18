@@ -9,7 +9,7 @@ const adminSchema = new mongoose.Schema({
     Correo:{type: String, required: true, unique:true},
     Telefono: {type: Number, required: true},
     Contrasena:{type: String, required: true},
-    Imagen:{type: String, required: true},
+    Imagen:{type: String},
     roleUser: {type: String, default: 'admin'}
 });
 

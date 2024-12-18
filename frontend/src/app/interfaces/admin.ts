@@ -5,6 +5,6 @@ export interface Admin {
     Correo:string;
     Telefono: number;
     Contrasena:string;
-    Imagen: string;
+    Imagen?: string;
     roleUser?:string;
 }

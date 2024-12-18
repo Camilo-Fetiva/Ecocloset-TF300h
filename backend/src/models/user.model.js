@@ -7,9 +7,9 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
     Nombre:{type: String, required: true}, //Crear el tipo de dato dentro del esquema, en este caso el nombre
     Correo:{type: String, required: true, unique:true},
-    Telefono: {type: Number, required: true, unique:true},
+    Telefono: {type: Number},
     Contrasena:{type: String, required: true},
-    Imagen: {type: String, required: true},
+    Imagen: {type: String},
     roleUser: {type: String, default: 'user'}
 });
 

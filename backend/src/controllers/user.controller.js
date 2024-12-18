@@ -8,10 +8,10 @@ import bcrypt from "bcryptjs";
 export const postUser = async (request, response) =>{
     try {
         // Deestructuracion ->  Permite acceder a cada una de las variables suministradas por el usuario en el Schema de datos
-        const {fullName, email, phone, password} = request.body;
+        const {Nombre, Correo, Telefono, Contrasena} = request.body;
 
-        const codedPassword = await bcrypt.hash(password, 10);
-        const newUser = await userModel.create({fullName, email, phone, password:codedPassword});
+        const codedPassword = await bcrypt.hash(Contrasena, 10);
+        const newUser = await userModel.create({Nombre, Correo, Telefono, Contrasena:codedPassword});
 
         return response.status(201).json({
             mensaje: "Usuario creado satisfactoriamente",

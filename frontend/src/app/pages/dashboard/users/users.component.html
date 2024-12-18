@@ -1,3 +1,5 @@
+<div *ngFor="let usuario of allUsers" class="col">
+
 <main>
     <!-- Barra izquierda -->
     <section class="admin-categorias"> 
@@ -62,7 +64,7 @@
                 <img src="/assets/dashboard/home/img-admin.png" alt="img-producto">
                 <div class="orden-detalle">
                     <p><strong># Orden:</strong> 231412341</p>
-                    <p><strong>Usuario:</strong> producto1213124</p>
+                    <p><strong>Usuario: </strong>{{usuario.Nombre}}</p>
                 </div>
             </section>
 
@@ -106,6 +108,7 @@
                     <th scope="col">Rol</th>
                 </thead>
             </table>
+            <app-table-users></app-table-users>
         </section>
     </section>
 
