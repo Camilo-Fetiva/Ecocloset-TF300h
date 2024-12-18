@@ -9,18 +9,30 @@
 
     <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Email</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" required>
+        <input 
+        type="email" 
+        class="form-control" 
+        id="correo"
+        name="email"
+        [(ngModel)]="correo"
+        >
     </div>
 
     <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="formGroupExampleInput2" required>  
+        <input 
+        type="password" 
+        class="form-control" 
+        id="formGroupExampleInput2" required
+        name="password"
+        [(ngModel)]="contrasena"
+        >  
     </div>
 
     <!-- Fin del Bootstrap -->
 
     <!-- Boton de registro -->
-    <a href="/index.html" style="text-decoration: none"><button class="btn-login" type="submit" onclick="nombreUser()">Login</button></a>
+    <button type="submit" class="btn btn-primary" (click)="iniciarSesion()">Iniciar sesión</button>
 
     <!-- Opciones de acceso con redes -->
     <h3>Siguenos en nuestras redes</h3>

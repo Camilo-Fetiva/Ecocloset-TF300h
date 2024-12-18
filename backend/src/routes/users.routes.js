@@ -14,7 +14,7 @@ export const userRouter = express.Router();
 userRouter.post ('/crear', postUser);
 
 // 3.2 Ruta para la peticion GET
-userRouter.get ('/obtener', authToken('admin'), getUser);
+userRouter.get ('/obtener', getUser);
 
 // 3.3 Ruta para la peticion PUT
 userRouter.put ('/actualizar/:id', authToken('admin'), putUserById);
