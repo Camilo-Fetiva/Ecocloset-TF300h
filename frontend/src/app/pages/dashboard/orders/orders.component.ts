@@ -6,10 +6,14 @@ import { inject } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { TableComponent } from '../../../components/table/table.component';
 
+// DEPENDENCIAS NECESARIAS
+import { RouterOutlet } from '@angular/router';
+import { RouterLink } from '@angular/router';
+
 @Component({
   selector: 'app-orders',
   standalone: true,
-  imports: [NgFor, TableComponent],
+  imports: [RouterOutlet, RouterLink, NgFor, TableComponent],
   templateUrl: './orders.component.html',
   styleUrl: './orders.component.css'
 })
