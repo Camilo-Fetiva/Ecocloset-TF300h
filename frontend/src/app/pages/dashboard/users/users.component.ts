@@ -27,7 +27,7 @@ export class UsersComponent {
   allUsers : User[] = []; //Array de productos y la estructura la da la interfase
 
   // PETICION GET (OBTENER)
-  obtenerProductos(){
+  obtenerUsuarios(){
     // Traer la dependencias del servicio y usar los metodos
     this._users.getUsers().subscribe(
       {
@@ -53,6 +53,6 @@ export class UsersComponent {
   // Mostarlo al cargar el contenido de la pagina
   // Usar el metodo -> ngOnInit
   ngOnInit(){
-    this.obtenerProductos();
+    this.obtenerUsuarios();
   };
 }

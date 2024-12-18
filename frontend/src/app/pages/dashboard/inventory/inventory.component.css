@@ -4,7 +4,7 @@ main{
 
 .admin-categorias{
     background-color: var(--colorPrimario);
-    height: 100vh;
+    height: 100;
     padding: 16px;
 }
 

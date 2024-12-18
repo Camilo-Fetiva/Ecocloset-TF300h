@@ -1,5 +1,8 @@
 <!-- NgFor recorre elemento de un ARRAY y escoge el dato especifico-->
 <div *ngFor="let producto of allProducts" class="col">
+
+<div *ngFor="let usuario of allUsers" class="col">
+
 <main>
      <!-- Barra izquierda -->
      <section class="admin-categorias"> 
@@ -61,12 +64,12 @@
         <h2>Últimas órdenes</h2>
         <section class="ultimas-ordenes">
             <section class="orden-card">
-                <img src="/assets/dashboard/home/img-admin.png" alt="img-producto">
+                <img src={{producto.Imagen}} alt="img-producto">
                 <div class="orden-detalle">
-                    <p><strong># Orden:</strong> 231412341</p>
-                    <p><strong>Usuario:</strong> producto1213124</p>
-                    <p><strong>Productos:</strong> producto1213124</p>
-                    <p><strong>Precio:</strong> $139.000</p>
+                    <p><strong># Orden: </strong>{{producto._id}}</p>
+                    <p><strong>Usuario:</strong> {{usuario.Nombre}}</p>
+                    <p><strong>Productos: </strong>{{producto.Nombre}}</p>
+                    <p><strong>Precio: </strong>{{producto.Precio}}</p>
                 </div>
             </section>
             <section class="orden-card">
