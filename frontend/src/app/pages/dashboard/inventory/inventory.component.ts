@@ -6,13 +6,13 @@ import { RouterLink } from '@angular/router';
 import { ProductsService } from '../../../services/products.service';
 import { Products } from '../../../interfaces/products';
 import { NgFor } from '@angular/common';
-import { TableComponent } from '../../../components/table/table.component';
+import { TableInventoryComponent } from '../../../components/table-inventory/table-inventory.component';
 
 
 @Component({
   selector: 'app-inventory',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, NgFor, TableComponent],
+  imports: [RouterOutlet, RouterLink, NgFor, TableInventoryComponent],
   templateUrl: './inventory.component.html',
   styleUrl: './inventory.component.css'
 })

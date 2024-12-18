@@ -13,3 +13,12 @@
     word-wrap: break-word;
     padding: 4px;
 }
+
+.btn-primary{
+    border: none;
+    background-color: var(--colorBlanco);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
