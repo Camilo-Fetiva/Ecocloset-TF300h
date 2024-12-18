@@ -47,3 +47,8 @@ main h1{
 .redes img{
     margin: 8px;
 }
+
+.btn-primary{
+    background-color: var(--colorPrimario);
+    border-style: none;
+}

@@ -39,12 +39,12 @@ contrasena: string = '';
 iniciarSesion() {
   if (this.correo === this.admin.correo && this.contrasena === this.admin.contrasena) {
     // Redirigir al usuario a otra página
-    alert('Bienvenido Admin');
+    alert('Bienvenido a Ecocloset');
     this.router.navigate(['/Dashboard']);
     
   } else {
     // Mostrar un mensaje de error o realizar otra acción
-    console.log('Correo o contraseña incorrectos');
+    alert('Correo o contraseña incorrectos');
   }
 }
 
