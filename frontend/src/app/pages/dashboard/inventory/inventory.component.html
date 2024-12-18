@@ -1,3 +1,6 @@
+<!-- NgFor recorre elemento de un ARRAY y escoge el dato especifico-->
+<div *ngFor="let producto of allProducts" class="col">
+
 <main>
     <!-- Barra izquierda -->
     <section class="admin-categorias"> 
@@ -51,43 +54,52 @@
     <!-- Dashboard Info -->
     <section class="informacion">
         <section class="titulo">
-            <img src="/assets/dashboard/home/img-icono-home2.png" alt="icono">
+            <img src="/assets/dashboard/home/img-icono-home2.png" alt="icono" height="50px">
             <h1>Inventario</h1>
         </section>
 
         <h2>Productos más vendidos</h2>
 
         <section class="productos-vendidos">
-            <section class="productos-texto">
-                <img src="/assets/dashboard/home/img-admin.png" alt="img-administrador">
-                <h3>Producto1</h3>
-                <h4>Valor</h4>
+
+            <section class="orden-card">
+                <img src="/assets/dashboard/home/img-admin.png" alt="img-producto">
+                <div class="orden-detalle">
+                    <p><strong># Orden:</strong> 231412341</p>
+                    <p><strong>Usuario:</strong> producto1213124</p>
+                </div>
             </section>
 
-            <section class="productos-texto">
-                <img src="/assets/dashboard/home/img-admin.png" alt="img-administrador">
-                <h3>Producto2</h3>
-                <h4>Valor</h4>
+            <section class="orden-card">
+                <img src="/assets/dashboard/home/img-admin.png" alt="img-producto">
+                <div class="orden-detalle">
+                    <p><strong># Orden:</strong> 231412341</p>
+                    <p><strong>Usuario:</strong> producto1213124</p>
+                </div>
             </section>
 
-            <section class="productos-texto">
-                <img src="/assets/dashboard/home/img-admin.png" alt="img-administrador">
-                <h3>Producto3</h3>
-                <h4>Valor</h4>
+            <section class="orden-card">
+                <img src="/assets/dashboard/home/img-admin.png" alt="img-producto">
+                <div class="orden-detalle">
+                    <p><strong># Orden:</strong> 231412341</p>
+                    <p><strong>Usuario:</strong> producto1213124</p>
+                </div>
             </section>
 
-            <section class="productos-texto">
-                <img src="/assets/dashboard/home/img-admin.png" alt="img-administrador">
-                <h3>Producto4</h3>
-                <h4>Valor</h4>
+            <section class="orden-card">
+                <img src="/assets/dashboard/home/img-admin.png" alt="img-producto">
+                <div class="orden-detalle">
+                    <p><strong># Orden:</strong> 231412341</p>
+                    <p><strong>Usuario:</strong> producto1213124</p>
+                </div>
             </section>
+
         </section>
 
         <section class="boton-producto">
-            <section class="boton-anadir">
-                <img src="/assets/dashboard/home/img-icono-salir.png" alt="icono">
-                <h5>Añadir producto</h5>
-            </section>
+            <button type="button" class="btn btn-primary">
+                <img src="/assets/dashboard/home/img-icono-users.png" alt="icono">
+                Añadir producto</button>
             <h2>Lista de inventario</h2>
         </section>
 
@@ -99,24 +111,12 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Imagen</th>
                     <th scope="col">Colección</th>
-                    <th scope="col">Tallas</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Descripción</th>
                     <th scope="col">ID</th>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Editar</th>
-                        <td>Nombre</td>
-                        <td>Imagen</td>
-                        <td>Colección</td>
-                        <td>Tallas</td>
-                        <td>Precio</td>
-                        <td>Descripción</td>
-                        <td>ID</td>
-                    </tr>
-                </tbody>
-              </table>
+            </table>
+            <app-table></app-table>
         </section>
     </section>
 
