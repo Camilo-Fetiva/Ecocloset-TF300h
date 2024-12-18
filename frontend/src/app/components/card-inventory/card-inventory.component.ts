@@ -1,24 +1,18 @@
 import { Component, inject } from '@angular/core';
 
-// DEPENDENCIAS NECESARIAS
-import { RouterOutlet } from '@angular/router';
-import { RouterLink } from '@angular/router';
-import { ProductsService } from '../../../services/products.service';
-import { Products } from '../../../interfaces/products';
+import { ProductsService } from '../../services/products.service';
+import { Products } from '../../interfaces/products';
 import { NgFor } from '@angular/common';
-import { TableInventoryComponent } from '../../../components/table-inventory/table-inventory.component';
-import { CardInventoryComponent } from "../../../components/card-inventory/card-inventory.component";
-
 
 @Component({
-  selector: 'app-inventory',
+  selector: 'app-card-inventory',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, NgFor, TableInventoryComponent, CardInventoryComponent],
-  templateUrl: './inventory.component.html',
-  styleUrl: './inventory.component.css'
+  imports: [NgFor],
+  templateUrl: './card-inventory.component.html',
+  styleUrl: './card-inventory.component.css'
 })
 
-export class InventoryComponent {
+export class CardInventoryComponent {
   // 1. INJECT de las dependencias a usar
   _products = inject(ProductsService)
 

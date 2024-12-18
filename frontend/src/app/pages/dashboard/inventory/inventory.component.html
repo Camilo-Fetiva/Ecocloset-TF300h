@@ -1,5 +1,5 @@
 <!-- NgFor recorre elemento de un ARRAY y escoge el dato especifico-->
-<div *ngFor="let producto of allProducts" class="col">
+<div *ngFor="let producto of allProducts.slice(0, 4)" class="col">
 
 <main>
     <!-- Barra izquierda -->
@@ -61,7 +61,6 @@
         <h2>Productos más vendidos</h2>
 
         <section class="productos-vendidos">
-
             <section class="orden-card">
                 <img src={{producto.Imagen}} alt="img-producto">
                 <div class="orden-detalle">
@@ -69,31 +68,6 @@
                     <h5>{{producto.Precio}}</h5>
                 </div>
             </section>
-
-            <section class="orden-card">
-                <img src="/assets/dashboard/home/img-admin.png" alt="img-producto">
-                <div class="orden-detalle">
-                    <p><strong># Orden:</strong> 231412341</p>
-                    <p><strong>Usuario:</strong> producto1213124</p>
-                </div>
-            </section>
-
-            <section class="orden-card">
-                <img src="/assets/dashboard/home/img-admin.png" alt="img-producto">
-                <div class="orden-detalle">
-                    <p><strong># Orden:</strong> 231412341</p>
-                    <p><strong>Usuario:</strong> producto1213124</p>
-                </div>
-            </section>
-
-            <section class="orden-card">
-                <img src="/assets/dashboard/home/img-admin.png" alt="img-producto">
-                <div class="orden-detalle">
-                    <p><strong># Orden:</strong> 231412341</p>
-                    <p><strong>Usuario:</strong> producto1213124</p>
-                </div>
-            </section>
-
         </section>
 
         <section class="boton-producto">

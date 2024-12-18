@@ -100,6 +100,7 @@ a:link, :visited, :hover, :active{
     width: auto;
     gap: 16px;
 }
+
 .orden-card {
     background-color: var(--colorBlanco);
     border: 1px solid #ddd;
