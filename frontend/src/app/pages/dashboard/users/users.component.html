@@ -1,5 +1,3 @@
-<div *ngFor="let usuario of allUsers.slice(0,4)" class="col">
-
     <main>
         <!-- Barra izquierda -->
         <section class="admin-categorias">
@@ -58,16 +56,18 @@
             </section>
 
             <h2>Los Usuarios con Mayores Compras:</h2>
-
-            <section class="productos-vendidos">
-                <section class="orden-card">
-                    <img src="/assets/dashboard/home/img-admin.png" alt="img-producto">
-                    <div class="orden-detalle">
-                        <h5><strong>Usuario: </strong>{{usuario.Nombre}}</h5>
-                    </div>
+        <section class="row">
+            <div *ngFor="let usuario of allUsers.slice(0,3)" class="col">
+                <section class="productos-vendidos">
+                    <section class="orden-card">
+                        <img src="/assets/dashboard/home/img-user.png" alt="img-producto">
+                        <div class="orden-detalle">
+                            <h5><strong>Usuario: </strong>{{usuario.Nombre}}</h5>
+                        </div>
+                    </section>
                 </section>
-
-            </section>
+            </div>
+        </section>
 
             <section class="boton-producto">
                 <h2>Lista de usuarios</h2>
@@ -93,7 +93,7 @@
 
                     <button (click)="modificarUsuario()" type="button"
                         class="btn btn-secondary bg-my-color col-12">
-                        <h3>Modificar Usuario</h3>
+                        <h5>Modificar Usuario</h5>
                     </button>
                     <button (click)="toggleDiv()" type="button" class="btn btn-danger bg-my-color col-12 mt-3">
                         Cerrar
@@ -111,9 +111,33 @@
                         <th scope="col">Correo</th>
                         <th scope="col">Teléfono</th>
                         <th scope="col">Rol</th>
+                        <th scope="col">ID</th>
                     </thead>
+
+                    <!-- TABLA -->
+                    <tbody class="table-group-divider" id="miTabla">
+                        <!-- @for (producto of allProducts; track $index) -->
+                         
+                        <tr *ngFor="let usuario of allUsers">
+                                <td class="acciones" id="acciones">
+                                    <button type="button" class="btn btn-primary" (click)="identificarId(usuario._id)">
+                                        <img src="/assets/dashboard/home/img-icono-editar.png" alt="icono" width="30px">
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger" (click)="borrarUsuario(usuario._id)">
+                                        <img src="/assets/dashboard/home/img-icono-eliminar.png" alt="icono" width="30px">
+                                    </button>
+                                </td>
+                                <td>{{usuario.Nombre}}</td>
+                                <td>{{usuario.Correo}}</td>
+                                <td>${{usuario.Telefono}}</td>
+                                <td>{{usuario.roleUser}}</td>
+                                <td>{{usuario._id}}</td>
+                        </tr>
+                        
+                    </tbody>
                 </table>
-                <app-table-users></app-table-users>
+                <!-- <app-table-users></app-table-users> -->
             </section>
         </section>
 

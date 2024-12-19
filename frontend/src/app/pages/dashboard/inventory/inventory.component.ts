@@ -28,12 +28,12 @@ export class InventoryComponent {
   allProducts : Products[] = []; //Array de productos y la estructura la da la interfase
 
   // VARIABLES PARA LAS PETICIONES
-  nombre: string = 'Saco';
+  nombre: string = '';
   precio: number = 0;
   imagen: string = '';
-  coleccion: string = 'Primavera';
+  coleccion: string = '';
   tallas: string ='';
-  descripcion?: string = 'Opcional';
+  descripcion?: string = '';
   showDiv: boolean = false;
   editMode: boolean = false;  
   editProductId: string | undefined | null= null;
@@ -43,6 +43,7 @@ export class InventoryComponent {
     // Traer la dependencias del servicio y usar los metodos
     this._products.getProducts().subscribe(
       {
+        
         // Gestionar la respuesta de la peticion
         // Manejo de errores
         next: (res:any) => {
@@ -63,9 +64,7 @@ export class InventoryComponent {
   }
 
   // PETICION POST
-  //crear datos
   crearProducto() {
-
     if (this.nombre === '' || this.imagen === '' || this.precio === 0 || this.coleccion === '' || this.tallas === '' || this.descripcion === '') {
       alert('Ingrese todos los campos');
     } else {
@@ -123,6 +122,7 @@ export class InventoryComponent {
             next: (res: any) => {
                 if (res) {
                     console.log('res', res);
+                    alert('Usuario actualizado satisfactoriamente');
                     this.obtenerProductos();
                     this.toggleDiv();
                 } else {

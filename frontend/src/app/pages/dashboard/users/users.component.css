@@ -1,10 +1,14 @@
+*{
+    overflow-x: hidden;
+}
+
 main{
     display: flex;
 }
 
 .admin-categorias{
     background-color: var(--colorPrimario);
-    height: 100vh;
+    height: 400;
     padding: 16px;
 }
 
@@ -41,7 +45,7 @@ main{
 
 a:link, :visited, :hover, :active{
     text-decoration: none;
-    color: var(--colorBlanco);
+    color: var(--colorTexto);
 }
 
 
@@ -107,7 +111,7 @@ a:link, :visited, :hover, :active{
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 16px;
-    width: 30%;
+    width: 100%;
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     margin: 0 8px;
@@ -145,4 +149,34 @@ a:link, :visited, :hover, :active{
     height: 50px;
     word-wrap: break-word;
     padding: 4px;
+}
+
+.table td {
+    background-color: EEEFEF;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    word-wrap: break-word;
+    padding: 4px;
+    border: solid rgb(241, 241, 241)
+}
+
+.py-5{
+    color: var(--colorTexto);
+    width: 100%;
+    background-color: rgb(233, 232, 232);
+    padding: 24px;
+    margin: 16px 0;
+    border-radius: 8px;
+}
+
+#miTabla img{
+    max-width: 100%;
+    max-height: 200%;
+    object-fit: cover;
+}
+
+#acciones button{
+    margin: 8px;
+    width: 80px;
 }

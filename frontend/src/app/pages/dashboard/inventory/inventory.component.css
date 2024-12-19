@@ -166,8 +166,13 @@ a:link, :visited, :hover, :active{
     border-radius: 8px;
 }
 
+#miTabla img{
+    max-width: 100%;
+    max-height: 200%;
+    object-fit: cover;
+}
+
 #acciones button{
-    margin-bottom: 16px;
-   
-    width: 120px;
+    margin: 8px;
+    width: 80px;
 }

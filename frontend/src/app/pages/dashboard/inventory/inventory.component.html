@@ -143,17 +143,15 @@
                         <tr *ngFor="let producto of allProducts">
                                 <td class="acciones" id="acciones">
                                     <button type="button" class="btn btn-primary" (click)="identificarId(producto._id)">
-                                        <i class="bi bi-pencil-square"></i>
-                                        Editar
+                                        <img src="/assets/dashboard/home/img-icono-editar.png" alt="icono" width="30px">
                                     </button>
 
                                     <button type="button" class="btn btn-danger" (click)="borrarProducto(producto._id)">
-                                        <i class="bi bi-trash"></i>
-                                        Eliminar
+                                        <img src="/assets/dashboard/home/img-icono-eliminar.png" alt="icono" width="30px">
                                     </button>
                                 </td>
                                 <td>{{producto.Nombre}}</td>
-                                <td>{{producto.Imagen}}</td>
+                                <td><img src={{producto.Imagen}} alt="img-producto" width="150px"></td>
                                 <td>{{producto.Coleccion}}</td>
                                 <td>${{producto.Precio}}</td>
                                 <td>{{producto.Descripcion}}</td>

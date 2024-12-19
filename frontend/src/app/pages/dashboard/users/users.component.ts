@@ -30,8 +30,8 @@ export class UsersComponent {
   allUsers : User[] = []; //Array de productos y la estructura la da la interfase
 
   // VARIABLES PARA LAS PETICIONES
-  nombre: string = 'Pepito';
-  correo: string = "Peptitocorreo";
+  nombre: string = '';
+  correo: string = "";
   telefono: number = 0;
   contrasena: string = '';
   showDiv: boolean = false;
@@ -64,17 +64,17 @@ export class UsersComponent {
   }
 
   //MODIFICAR USUARIOS
-    identificarId(id: string | undefined ) {
-      this.editUserId = id;
-      this.editMode = true;
-      this.showDiv = true;
-      console.log(this.editUserId);
-    }
+  identificarId(id: string | undefined ) {
+    this.editUserId = id;
+    this.editMode = true;
+    this.showDiv = true;
+    console.log(this.editUserId);
+  }
   
     // PETICION PUT
     modificarUsuario() {
       console.log('Entré');
-      console.log(this.editUserId, this.nombre, this.correo, this.telefono,);
+      console.log( this.editUserId, this.nombre, this.correo, this.telefono,);
   
       if (!this.nombre || !this.correo || this.telefono <= 0) {
           alert('Ingrese todos los campos');
@@ -90,6 +90,7 @@ export class UsersComponent {
               next: (res: any) => {
                   if (res) {
                       console.log('res', res);
+                      alert('Usuario actualizado satisfactoriamente');
                       this.obtenerUsuarios();
                       this.toggleDiv();
                   } else {
@@ -104,14 +105,14 @@ export class UsersComponent {
     }
   
     // PETICION DELETE
-    borrarProducto(idForDelete: any) {
-      console.log('Producto a borrar:', idForDelete);
+    borrarUsuario(idForDelete: any) {
+      console.log('Usuario a borrar:', idForDelete);
   
       this._users.deleteUsers(idForDelete).subscribe({
           next: (res: any) => {
               if (res) {
                   console.log('res', res);
-                  alert('Producto eliminado satisfactoriamente')
+                  alert('Usuario eliminado satisfactoriamente')
                   this.obtenerUsuarios();
               } else {
                   console.error('Hubo un error');
