@@ -9,11 +9,13 @@ import { NgFor } from '@angular/common';
 import { TableInventoryComponent } from '../../../components/table-inventory/table-inventory.component';
 import { CardInventoryComponent } from "../../../components/card-inventory/card-inventory.component";
 
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-inventory',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, NgFor, TableInventoryComponent, CardInventoryComponent],
+  imports: [RouterOutlet, RouterLink, NgFor, TableInventoryComponent, CardInventoryComponent, FormsModule],
   templateUrl: './inventory.component.html',
   styleUrl: './inventory.component.css'
 })
@@ -24,6 +26,16 @@ export class InventoryComponent {
 
   // 2. Declaracion de variables
   allProducts : Products[] = []; //Array de productos y la estructura la da la interfase
+
+  // VARIABLES PARA LAS PETICIONES
+  nombre: string = '';
+  precio: number = 0;
+  imagen: string = '';
+  coleccion: string = '';
+  tallas: string ='';
+  showDiv: boolean = false;
+  editMode: boolean = false;  
+  editProductId: string | undefined | null= null;
 
   // PETICION GET (OBTENER)
   obtenerProductos(){
@@ -49,6 +61,113 @@ export class InventoryComponent {
       }
     );
   }
+
+  // PETICION POST
+  //crear datos
+  crearProducto() {
+
+    if (this.nombre === '' || this.imagen === '' || this.precio === 0) {
+      alert('Ingrese todos los campos');
+    } else {
+
+      const nuevoProducto: Products = {
+        Nombre: this.nombre,
+        Imagen: this.imagen,
+        Precio: this.precio,
+        Coleccion: this.coleccion,
+        Tallas: this.tallas
+      };
+
+      this._products.postProducts(nuevoProducto).subscribe({
+        next: (res: any) => {
+          if (res) {
+            console.log('res', res);
+            this.obtenerProductos();
+          } else {
+            console.error('Hubo un error');
+          }
+        },
+        error: (err) => {
+          console.error('Hubo un error', err);
+        }
+      });
+    }
+  }
+
+  //MODIFICAR PRODUCTOS
+  identificarId(id: string | undefined ) {
+    this.editProductId = id;
+    this.editMode = true;
+    this.showDiv = true;
+    console.log(this.editProductId);
+  }
+
+  // PETICION PUT
+  modificarProducto() {
+    console.log('Entré');
+    console.log(this.editProductId, this.nombre, this.imagen, this.precio);
+
+    if (!this.nombre || !this.imagen || this.precio <= 0) {
+        alert('Ingrese todos los campos');
+    } else if (this.editProductId) {
+        const productoActualizado: Products = {
+          Nombre: this.nombre,
+          Imagen: this.imagen,
+          Precio: this.precio,
+          Coleccion: this.coleccion,
+          Tallas: this.tallas
+        };
+
+        this._products.putProducts(productoActualizado, this.editProductId).subscribe({
+            next: (res: any) => {
+                if (res) {
+                    console.log('res', res);
+                    this.obtenerProductos();
+                    this.toggleDiv();
+                } else {
+                    console.error('Hubo un error');
+                }
+            },
+            error: (err) => {
+                console.error('Hubo un error', err);
+            }
+        });
+    }
+  }
+
+  // PETICION DELETE
+  borrarProducto(idForDelete: string) {
+    console.log('Producto a borrar:', idForDelete);
+
+    this._products.deleteProducts(idForDelete).subscribe({
+        next: (res: any) => {
+            if (res) {
+                console.log('res', res);
+                this.obtenerProductos();
+            } else {
+                console.error('Hubo un error');
+            }
+        },
+        error: (err) => {
+            console.error('Hubo un error', err);
+        }
+    });
+  }
+
+  // MOSTRAR EL FORMULARIO
+  toggleDiv() {
+    this.showDiv = !this.showDiv;
+    if (!this.showDiv) {
+      this.nombre = '';
+      this.imagen = '';
+      this.precio = 0;
+      this.coleccion = '';
+      this.tallas='';
+      this.editMode = false;
+      this.editProductId = null;
+    }
+  }
+
   // Mostarlo al cargar el contenido de la pagina
   // Usar el metodo -> ngOnInit
   ngOnInit(){
