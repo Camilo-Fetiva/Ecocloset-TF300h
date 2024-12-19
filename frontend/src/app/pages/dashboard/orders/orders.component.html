@@ -1,17 +1,12 @@
-<!-- NgFor recorre elemento de un ARRAY y escoge el dato especifico-->
-<div *ngFor="let producto of allProducts.slice(0,3)" class="col">
-
-<div *ngFor="let usuario of allUsers" class="col">
-
 <main>
-     <!-- Barra izquierda -->
-     <section class="admin-categorias"> 
+    <!-- Barra izquierda -->
+    <section class="admin-categorias">
         <!-- CARD DE ADMIN -->
         <div class="card2">
             <img src="/assets/dashboard/home/img-admin.png" class="card-img-top" alt="...">
             <div class="card-body">
-            <h5 class="card-title">nombreAdmin</h5>
-            <p class="card-text">Administrador(a)</p>
+                <h5 class="card-title">nombreAdmin</h5>
+                <p class="card-text">Administrador(a)</p>
             </div>
         </div>
         <!-- ----------------------------------- -->
@@ -62,30 +57,49 @@
         </section>
 
         <h2>Últimas órdenes</h2>
-        <section class="ultimas-ordenes">
-            <section class="orden-card">
-                <img src={{producto.Imagen}} alt="img-producto">
-                <div class="orden-detalle">
-                    <p><strong># Orden: </strong>{{producto._id}}</p>
-                    <p><strong>Usuario:</strong> {{usuario.Nombre}}</p>
-                    <p><strong>Productos: </strong>{{producto.Nombre}}</p>
-                    <p><strong>Precio: </strong>{{producto.Precio}}</p>
-                </div>
-            </section>
+        <!-- NgFor recorre elemento de un ARRAY y escoge el dato especifico-->
+        <section class="row">
+            <div *ngFor="let producto of allProducts.slice(0,3)" class="col">
+
+                <section class="ultimas-ordenes">
+                    <section class="orden-card">
+                        <img src={{producto.Imagen}} alt="img-producto">
+                        <div class="orden-detalle">
+                            <p><strong>#Orden: </strong>{{producto._id}}</p>
+                            <div *ngFor="let usuario of allUsers.slice(0,1)" class="col">
+                                <p><strong>Usuario: </strong>{{usuario.Nombre}}</p>
+                            </div>
+                            <p><strong>Productos: </strong>{{producto.Nombre}}</p>
+                            <p><strong>Precio: </strong>{{producto.Precio}}</p>
+                        </div>
+                    </section>
+                </section>
+            </div>
+
         </section>
+
 
         <h2>Lista de órdenes</h2>
         <section class="tabla-ordenes">
             <table class="table">
                 <thead class="table-dark">
-                    <th scope="col">ID</th>
                     <th scope="col"># Orden</th>
                     <th scope="col">Usuario</th>
                     <th scope="col">Producto</th>
                     <th scope="col">Precio</th>
                 </thead>
+
+                <tbody class="table-group-divider" id="miTabla">
+                    <tr *ngFor="let producto of allProducts.slice(0,10)" class="col">
+                        <td>{{producto._id}}</td>
+                        <td *ngFor="let usuario of allUsers.slice(0,1)" class="col">{{usuario.Nombre}}</td>
+                        <td>{{producto.Nombre}}</td>
+                        <td>{{producto.Precio}}</td>
+
+                    </tr>
+                </tbody>
             </table>
-            <app-table></app-table>
+
         </section>
     </section>
 </main>

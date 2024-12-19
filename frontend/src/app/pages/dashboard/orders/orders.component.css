@@ -103,9 +103,11 @@ a:link, :visited, :hover, :active{
 }
 
 .productos-texto {
-    width: 100%;
-    margin: 0 8px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 0;
+    width: auto;
+    gap: 16px;
 }
 
 
@@ -114,7 +116,7 @@ a:link, :visited, :hover, :active{
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 16px;
-    width: 30%;
+    width: 100%;
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -144,4 +146,24 @@ a:link, :visited, :hover, :active{
     height: 50px;
     word-wrap: break-word;
     padding: 4px;
+    border: var(--colorBlanco);
+}
+
+.table td {
+    background-color: EEEFEF;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    word-wrap: break-word;
+    padding: 4px;
+    border: solid rgb(241, 241, 241);
+}
+
+.py-5{
+    color: var(--colorTexto);
+    width: 100%;
+    background-color: rgb(233, 232, 232);
+    padding: 24px;
+    margin: 16px 0;
+    border-radius: 8px;
 }

@@ -3,7 +3,6 @@ import { ProductsService } from '../../../services/products.service';
 import { Products } from '../../../interfaces/products';
 import { inject } from '@angular/core';
 import { NgFor } from '@angular/common';
-import { TableComponent } from '../../../components/table/table.component';
 import { UserService } from '../../../services/user.service';
 import { User } from '../../../interfaces/user';
 
@@ -14,7 +13,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-orders',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, NgFor, TableComponent],
+  imports: [RouterOutlet, RouterLink, NgFor,],
   templateUrl: './orders.component.html',
   styleUrl: './orders.component.css'
 })
@@ -80,6 +79,14 @@ export class OrdersComponent {
 
       }
     );
+  }
+
+  // Método para mezclar el arreglo de productos de forma aleatoria (Fisher-Yates Shuffle)
+  shuffleUsers() {
+    for (let i = this.allUsers.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [this.allUsers[i], this.allUsers[j]] = [this.allUsers[j], this.allUsers[i]]; // Swap
+    }
   }
   // Mostarlo al cargar el contenido de la pagina
   // Usar el metodo -> ngOnInit
