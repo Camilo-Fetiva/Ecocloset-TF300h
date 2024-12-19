@@ -11,7 +11,7 @@ export const productRouter = express.Router();
 // 3. Crear la rutas para las peticiones de los productos
 
 // 3.1 Ruta para la peticion POST
-productRouter.post ('/crear', authToken('admin'), postProduct);
+productRouter.post ('/crear', postProduct);
 
 // 3.2 Ruta para la peticion GET
 productRouter.get ('/obtener', getProduct);

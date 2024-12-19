@@ -41,9 +41,8 @@ main{
 
 a:link, :visited, :hover, :active{
     text-decoration: none;
-    color: var(--colorBlanco);
+    color: var(--colorTexto);
 }
-
 
 .admin-texto{
     text-align: center;
@@ -145,4 +144,13 @@ a:link, :visited, :hover, :active{
     height: 50px;
     word-wrap: break-word;
     padding: 4px;
+}
+
+.py-5{
+    color: var(--colorTexto);
+    width: 100%;
+    background-color: rgb(233, 232, 232);
+    padding: 24px;
+    margin: 16px 0;
+    border-radius: 8px;
 }

@@ -95,9 +95,24 @@
                     <label for="inputPrecio" class="form-label">Precio</label>
                     <input type="number" class="form-control" name="precio" [(ngModel)]="precio" />
                 </div>
+
+                <div class="mb-3">
+                    <label for="inputColeccion" class="form-label">Colección</label>
+                    <input type="text" class="form-control" name="coleccion" [(ngModel)]="coleccion" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="inputTallas" class="form-label">Tallas</label>
+                    <input type="text" class="form-control" name="tallas" [(ngModel)]="tallas" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="inputDescripcion" class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" [(ngModel)]="descripcion" />
+                </div>
         
                 <button (click)="editMode ? modificarProducto() : crearProducto()" type="button"
-                    class="btn btn-primary bg-my-color col-12">
+                    class="btn btn-secondary bg-my-color col-12">
                     {{ editMode ? 'Modificar Producto' : 'Crear Producto' }}
                 </button>
                 <button (click)="toggleDiv()" type="button" class="btn btn-danger bg-my-color col-12 mt-3">

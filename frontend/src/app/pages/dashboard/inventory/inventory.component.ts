@@ -33,6 +33,7 @@ export class InventoryComponent {
   imagen: string = '';
   coleccion: string = '';
   tallas: string ='';
+  descripcion?: string = 'Opcional';
   showDiv: boolean = false;
   editMode: boolean = false;  
   editProductId: string | undefined | null= null;
@@ -57,7 +58,6 @@ export class InventoryComponent {
           // Cuando sale incorrecto
           console.log (error);
         }
-
       }
     );
   }
@@ -66,22 +66,23 @@ export class InventoryComponent {
   //crear datos
   crearProducto() {
 
-    if (this.nombre === '' || this.imagen === '' || this.precio === 0) {
+    if (this.nombre === '' || this.imagen === '' || this.precio === 0 || this.coleccion === '' || this.tallas === '' || this.descripcion === '') {
       alert('Ingrese todos los campos');
     } else {
-
       const nuevoProducto: Products = {
         Nombre: this.nombre,
         Imagen: this.imagen,
         Precio: this.precio,
         Coleccion: this.coleccion,
-        Tallas: this.tallas
+        Tallas: this.tallas,
+        Descripcion: this.descripcion
       };
 
       this._products.postProducts(nuevoProducto).subscribe({
         next: (res: any) => {
           if (res) {
             console.log('res', res);
+            alert('Producto creado satisfactoriamente');
             this.obtenerProductos();
           } else {
             console.error('Hubo un error');

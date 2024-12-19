@@ -41,7 +41,7 @@ main{
 
 a:link, :visited, :hover, :active{
     text-decoration: none;
-    color: var(--colorBlanco);
+    color: var(--colorTexto);
 }
 
 
