@@ -17,7 +17,7 @@ userRouter.post ('/crear', postUser);
 userRouter.get ('/obtener', getUser);
 
 // 3.3 Ruta para la peticion PUT
-userRouter.put ('/actualizar/:id', authToken('admin'), putUserById);
+userRouter.put ('/actualizar/:id', putUserById);
 
 // 3.4 Ruta para la peticion DELETE
-userRouter.delete ('/eliminar/:id', authToken('admin'), deleteUserById);
+userRouter.delete ('/eliminar/:id',deleteUserById);

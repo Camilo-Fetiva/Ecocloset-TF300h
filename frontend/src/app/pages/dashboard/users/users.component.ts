@@ -12,10 +12,13 @@ import { User } from '../../../interfaces/user';
 // METODO 
 import { NgFor } from '@angular/common';
 
+// FORMULARIO
+import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, TableUsersComponent, NgFor],
+  imports: [RouterOutlet, RouterLink, TableUsersComponent, NgFor, FormsModule],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })
@@ -25,6 +28,15 @@ export class UsersComponent {
     
   // 2. Declaracion de variables
   allUsers : User[] = []; //Array de productos y la estructura la da la interfase
+
+  // VARIABLES PARA LAS PETICIONES
+  nombre: string = 'Pepito';
+  correo: string = "Peptitocorreo";
+  telefono: number = 0;
+  contrasena: string = '';
+  showDiv: boolean = false;
+  editMode: boolean = false;  
+  editUserId: string | undefined | null= null;
 
   // PETICION GET (OBTENER)
   obtenerUsuarios(){
@@ -50,6 +62,79 @@ export class UsersComponent {
       }
     );
   }
+
+  //MODIFICAR USUARIOS
+    identificarId(id: string | undefined ) {
+      this.editUserId = id;
+      this.editMode = true;
+      this.showDiv = true;
+      console.log(this.editUserId);
+    }
+  
+    // PETICION PUT
+    modificarUsuario() {
+      console.log('Entré');
+      console.log(this.editUserId, this.nombre, this.correo, this.telefono,);
+  
+      if (!this.nombre || !this.correo || this.telefono <= 0) {
+          alert('Ingrese todos los campos');
+      } else if (this.editUserId) {
+          const usuarioActualizado: User = {
+            Nombre: this.nombre,
+            Correo: this.correo,
+            Telefono: this.telefono,
+            Contrasena: this.contrasena
+          };
+  
+          this._users.putUsers(usuarioActualizado, this.editUserId).subscribe({
+              next: (res: any) => {
+                  if (res) {
+                      console.log('res', res);
+                      this.obtenerUsuarios();
+                      this.toggleDiv();
+                  } else {
+                      console.error('Hubo un error');
+                  }
+              },
+              error: (err) => {
+                  console.error('Hubo un error', err);
+              }
+          });
+      }
+    }
+  
+    // PETICION DELETE
+    borrarProducto(idForDelete: any) {
+      console.log('Producto a borrar:', idForDelete);
+  
+      this._users.deleteUsers(idForDelete).subscribe({
+          next: (res: any) => {
+              if (res) {
+                  console.log('res', res);
+                  alert('Producto eliminado satisfactoriamente')
+                  this.obtenerUsuarios();
+              } else {
+                  console.error('Hubo un error');
+              }
+          },
+          error: (err) => {
+              console.error('Hubo un error', err);
+          }
+      });
+    }
+  
+    // MOSTRAR EL FORMULARIO
+    toggleDiv() {
+      this.showDiv = !this.showDiv;
+      if (!this.showDiv) {
+        this.nombre = '';
+        this.correo = '';
+        this.telefono = 0;
+        this.editMode = false;
+        this.editUserId = null;
+      }
+    }
+  
   // Mostarlo al cargar el contenido de la pagina
   // Usar el metodo -> ngOnInit
   ngOnInit(){

@@ -28,10 +28,10 @@ export class InventoryComponent {
   allProducts : Products[] = []; //Array de productos y la estructura la da la interfase
 
   // VARIABLES PARA LAS PETICIONES
-  nombre: string = '';
+  nombre: string = 'Saco';
   precio: number = 0;
   imagen: string = '';
-  coleccion: string = '';
+  coleccion: string = 'Primavera';
   tallas: string ='';
   descripcion?: string = 'Opcional';
   showDiv: boolean = false;

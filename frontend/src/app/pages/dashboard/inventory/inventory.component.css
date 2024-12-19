@@ -105,7 +105,7 @@ a:link, :visited, :hover, :active{
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 16px;
-    width: 30%;
+    width: 100%;
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     margin: 0 8px;
