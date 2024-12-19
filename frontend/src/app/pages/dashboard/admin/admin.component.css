@@ -9,7 +9,7 @@ main{
 
 .admin-categorias{
     background-color: var(--colorPrimario);
-    height: 100vh;
+    height: 100;
     padding: 16px;
 }
 
@@ -46,7 +46,7 @@ main{
 
 a:link, :visited, :hover, :active{
     text-decoration: none;
-    color: var(--colorBlanco);
+    color: var(--colorTexto);
 }
 
 

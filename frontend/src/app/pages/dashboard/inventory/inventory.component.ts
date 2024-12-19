@@ -11,6 +11,10 @@ import { CardInventoryComponent } from "../../../components/card-inventory/card-
 
 import { FormsModule } from '@angular/forms';
 
+// IMPORTAR ADMIN
+import { AdminService } from '../../../services/admin.service';
+import { Admin } from '../../../interfaces/admin';
+
 
 @Component({
   selector: 'app-inventory',
@@ -155,6 +159,29 @@ export class InventoryComponent {
         }
     });
   }
+
+  // 1. INJECT de las dependencias a usar
+    _administrador = inject(AdminService)
+  
+    // 2. Declaracion de variables
+    allAdmin : Admin[] = []; //Array de productos y la estructura la da la interfase
+  
+    // PETICION GET (OBTENER)
+    obtenerAdmin(){
+      // Traer la dependencias del servicio y usar los metodos
+      this._administrador.getAdmin().subscribe(
+        {
+          // Gestionar la respuesta de la peticion
+          // Manejo de errores
+          next: (res:any) => {
+            // Cuando sale correcto
+            console.log (res.datos);
+            // Guardar los datos en la variable
+            this.allAdmin = res.datos; 
+            console.log (this.allAdmin);}
+        }
+      );
+    }
 
   // MOSTRAR EL FORMULARIO
   toggleDiv() {

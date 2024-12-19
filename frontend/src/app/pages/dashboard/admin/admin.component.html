@@ -4,13 +4,15 @@
 <main>
 
     <!-- Barra izquierda -->
-    <section class="admin-categorias"> 
+    <section class="admin-categorias">
         <!-- CARD DE ADMIN -->
         <div class="card2">
-            <img src="/assets/dashboard/home/img-admin.png" class="card-img-top" alt="...">
+            <img src="/assets/dashboard/home/img-admin.png" alt="icono" width="150px">
             <div class="card-body">
-            <h5 class="card-title">nombreAdmin</h5>
-            <p class="card-text">Administrador(a)</p>
+                <div *ngFor="let admin of allAdmin" class="col">
+                    <h5 class="card-title"><strong>{{admin.Nombre}}</strong></h5>
+                </div>
+                <p class="card-text"><strong>Administrador(a)</strong></p>
             </div>
         </div>
         <!-- ----------------------------------- -->
@@ -51,7 +53,7 @@
             <a routerLink="/">Salir</a></button>
         <!-- ------------------------ -->
     </section>
-    
+
 
     <section class="informacion">
         <section class="titulo">
@@ -59,40 +61,40 @@
             <h1>Dashboard</h1>
         </section>
 
-        
+
         <section class="categorias-admin">
 
             <div class="card" style="width: 18rem;">
                 <img src="/assets/dashboard/home/img-ordenes.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h2 class="card-title">Ordenes</h2>
-                  <button type="button" class="btn btn-primary">
-                    <img src="/assets/dashboard/home/img-icono-config.png" alt="icono">
-                    <a routerLink="/Dashboard/Ordenes">Ver Ordenes</a></button>
+                    <h2 class="card-title">Ordenes</h2>
+                    <button type="button" class="btn btn-primary">
+                        <img src="/assets/dashboard/home/img-icono-config.png" alt="icono">
+                        <a routerLink="/Dashboard/Ordenes">Ver Ordenes</a></button>
                 </div>
             </div>
 
             <div class="card" style="width: 18rem;">
                 <img src="/assets/dashboard/home/img-inventario.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h2 class="card-title">Inventario</h2>
-                  <button type="button" class="btn btn-primary">
-                    <img src="/assets/dashboard/home/img-icono-config.png" alt="icono">
-                    <a routerLink="/Dashboard/Inventario">Ver Inventario</a></button>
+                    <h2 class="card-title">Inventario</h2>
+                    <button type="button" class="btn btn-primary">
+                        <img src="/assets/dashboard/home/img-icono-config.png" alt="icono">
+                        <a routerLink="/Dashboard/Inventario">Ver Inventario</a></button>
                 </div>
             </div>
 
             <div class="card" style="width: 18rem;">
                 <img src="/assets/dashboard/home/img-users.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h2 class="card-title">Usuarios</h2>
-                  <button type="button" class="btn btn-primary">
-                    <img src="/assets/dashboard/home/img-icono-config.png" alt="icono">
-                    <a routerLink="/Dashboard/Usuarios">Ver Usuarios</a></button>
+                    <h2 class="card-title">Usuarios</h2>
+                    <button type="button" class="btn btn-primary">
+                        <img src="/assets/dashboard/home/img-icono-config.png" alt="icono">
+                        <a routerLink="/Dashboard/Usuarios">Ver Usuarios</a></button>
                 </div>
             </div>
 
-            
+
         </section>
 
         <section class="cifras-admin">
@@ -102,21 +104,24 @@
                 <section class="boton-cifras">
                     <button type="button" class="btn btn-primary">
                         <img src="/assets/dashboard/home/img-icono-inventario.png" alt="icono">
-                        <h4>0</h4></button>
+                        <h4>0</h4>
+                    </button>
                 </section>
 
                 <h3>Productos Vendidos</h3>
                 <section class="boton-cifras">
                     <button type="button" class="btn btn-primary">
                         <img src="/assets/dashboard/home/img-icono-ordenes.png" alt="icono">
-                        <h4>numero-productos</h4></button>
+                        <h4>10</h4>
+                    </button>
                 </section>
 
                 <h3>Clientes Totales</h3>
                 <section class="boton-cifras">
                     <button type="button" class="btn btn-primary">
                         <img src="/assets/dashboard/home/img-icono-carrito.png" alt="icono">
-                        <h4>numero-clientes</h4></button>
+                        <h4>10</h4>
+                    </button>
                 </section>
             </section>
 
@@ -127,7 +132,8 @@
                     <section class="boton-numero">
                         <button type="button" class="btn btn-secondary">
                             <img src="/assets/dashboard/home/img-icono-carrito.png" alt="icono">
-                            <h4>21</h4></button>
+                            <h4>21</h4>
+                        </button>
                     </section>
                 </section>
 
@@ -136,7 +142,8 @@
                     <section class="boton-numero">
                         <button type="button" class="btn btn-secondary">
                             <img src="/assets/dashboard/home/img-icono-carrito.png" alt="icono">
-                            <h4>4</h4></button>
+                            <h4>4</h4>
+                        </button>
                     </section>
                 </section>
 
@@ -145,7 +152,8 @@
                     <section class="boton-numero">
                         <button type="button" class="btn btn-secondary">
                             <img src="/assets/dashboard/home/img-icono-carrito.png" alt="icono">
-                            <h4>21</h4></button>
+                            <h4>10</h4>
+                        </button>
                     </section>
                 </section>
 
@@ -154,7 +162,8 @@
                     <section class="boton-numero">
                         <button type="button" class="btn btn-secondary">
                             <img src="/assets/dashboard/home/img-icono-carrito.png" alt="icono">
-                            <h4>0</h4></button>
+                            <h4>0</h4>
+                        </button>
                     </section>
                 </section>
             </section>

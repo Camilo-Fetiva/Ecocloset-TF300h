@@ -20,7 +20,7 @@ import { NgFor } from '@angular/common';
 })
 export class AdminComponent {
 // 1. INJECT de las dependencias a usar
-  _products = inject(AdminService)
+  _administrador = inject(AdminService)
 
   // 2. Declaracion de variables
   allAdmin : Admin[] = []; //Array de productos y la estructura la da la interfase
@@ -28,7 +28,7 @@ export class AdminComponent {
   // PETICION GET (OBTENER)
   obtenerAdmin(){
     // Traer la dependencias del servicio y usar los metodos
-    this._products.getAdmin().subscribe(
+    this._administrador.getAdmin().subscribe(
       {
         // Gestionar la respuesta de la peticion
         // Manejo de errores
