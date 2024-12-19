@@ -17,7 +17,7 @@ productRouter.post ('/crear', postProduct);
 productRouter.get ('/obtener', getProduct);
 
 // 3.3 Ruta para la peticion PUT
-productRouter.put ('/actualizar/:id', authToken('admin'), putProductById);
+productRouter.put ('/actualizar/:id', putProductById);
 
 // 3.4 Ruta para la peticion DELETE
-productRouter.delete ('/eliminar/:id', authToken('admin'), deleteProductById);
+productRouter.delete ('/eliminar/:id', deleteProductById);

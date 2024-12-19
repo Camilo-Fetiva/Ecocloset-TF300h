@@ -144,6 +144,17 @@ a:link, :visited, :hover, :active{
     height: 50px;
     word-wrap: break-word;
     padding: 4px;
+    border: var(--colorBlanco)
+}
+
+.table td {
+    background-color: EEEFEF;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    word-wrap: break-word;
+    padding: 4px;
+    border: solid rgb(241, 241, 241)
 }
 
 .py-5{
@@ -153,4 +164,10 @@ a:link, :visited, :hover, :active{
     padding: 24px;
     margin: 16px 0;
     border-radius: 8px;
+}
+
+#acciones button{
+    margin-bottom: 16px;
+   
+    width: 120px;
 }

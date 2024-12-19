@@ -135,8 +135,32 @@
                     <th scope="col">Descripción</th>
                     <th scope="col">ID</th>
                 </thead>
+
+                <!-- TABLA -->
+                <tbody class="table-group-divider" id="miTabla">
+                    @for (producto of allProducts; track $index){
+                    <tr>
+                        <td class="acciones" id="acciones">
+                            <button type="button" class="btn btn-primary" (click)="identificarId(producto._id)">
+                                <i class="bi bi-pencil-square"></i>
+                                Editar
+                            </button>
+
+                            <button type="button" class="btn btn-danger" (click)="borrarProducto(producto._id)">
+                                <i class="bi bi-trash"></i>
+                                Eliminar
+                            </button>
+                        </td>
+                        <td>{{producto.Nombre}}</td>
+                        <td>{{producto.Imagen}}</td>
+                        <td>{{producto.Coleccion}}</td>
+                        <td>${{producto.Precio}}</td>
+                        <td>{{producto.Descripcion}}</td>
+                        <td>{{producto._id}}</td>
+                    </tr>
+                }
+                </tbody>
             </table>
-            <app-table-inventory></app-table-inventory>
         </section>
     </section>
 

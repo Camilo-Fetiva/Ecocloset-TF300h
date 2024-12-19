@@ -137,13 +137,14 @@ export class InventoryComponent {
   }
 
   // PETICION DELETE
-  borrarProducto(idForDelete: string) {
+  borrarProducto(idForDelete: any) {
     console.log('Producto a borrar:', idForDelete);
 
     this._products.deleteProducts(idForDelete).subscribe({
         next: (res: any) => {
             if (res) {
                 console.log('res', res);
+                alert('Producto eliminado satisfactoriamente')
                 this.obtenerProductos();
             } else {
                 console.error('Hubo un error');
