@@ -1,6 +1,3 @@
-*{
-    overflow-x: hidden;
-}
 
 main{
     display: flex;
@@ -149,16 +146,17 @@ a:link, :visited, :hover, :active{
     height: 50px;
     word-wrap: break-word;
     padding: 4px;
+    border: var(--colorBlanco)
 }
 
 .table td {
-    background-color: EEEFEF;
+    background-color: var(--colorBlanco);
     text-align: center;
     width: 100%;
     height: 50px;
     word-wrap: break-word;
     padding: 4px;
-    border: solid rgb(241, 241, 241)
+    border: solid rgb(241, 241, 241);
 }
 
 .py-5{
