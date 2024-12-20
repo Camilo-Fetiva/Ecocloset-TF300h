@@ -12,4 +12,4 @@ Ecocloset en una aplicación que conecta de manera rápida y sencilla estos cons
 ![alt text](img-logo.png)
 
 ## AUTORES
-<br> Proyecto realizado por Santiago Gutierrez (Como desarollador) y Camilo Fetiva (Como SCRUM Master ) para el Bootcamp de Desarrollo Web 2024 </br>
+<br> Proyecto realizado por Santiago Gutierrez (Como desarollador) y Camilo Fetiva (Como SCRUM Master ) para el Bootcamp de Desarrollo Web 2024  Diciembre 2024</br>
