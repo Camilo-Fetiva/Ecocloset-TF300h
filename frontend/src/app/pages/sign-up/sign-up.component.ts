@@ -12,6 +12,7 @@ import { User } from '../../interfaces/user';
 import { UserService } from '../../services/user.service';
 
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,8 +25,10 @@ import { ToastrService } from 'ngx-toastr';
 export class SignUpComponent {
   _users = inject(UserService)
   _mensajes = inject(ToastrService)
-  allUsers : User[]=[];
+  _router = inject(Router);
 
+  allUsers : User[]=[];
+  
   Nombre: string = '';
   Correo: string = '';
   Telefono: number = 0;
@@ -36,8 +39,9 @@ export class SignUpComponent {
   // PETICION POST (CREAR)
   crearUsuarios(){
     if(this.Nombre === '' || this.Correo === '' || this.Telefono === 0 || this.Contrasena === ''){
-      // this._mensajes.warning('Ingresa los datos solicitados');
     }else{
+      this._router.navigate(['/']);
+      alert('Bienvenido a Ecocloset!')
       const nuevoUsuario: User ={
          Nombre : this.Nombre,
          Correo : this.Correo,
@@ -57,6 +61,8 @@ export class SignUpComponent {
     };
 
   };
+
+
 
   // Mostarlo al cargar el contenido de la pagina
   // Usar el metodo -> ngOnInit

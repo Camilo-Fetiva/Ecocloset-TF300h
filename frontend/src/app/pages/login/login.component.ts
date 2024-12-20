@@ -1,4 +1,4 @@
-import { Component, inject} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -24,93 +24,74 @@ import { User } from '../../interfaces/user';
 
 
 export class LoginComponent {
+  // Métodos de inyección (Angular inject)
+  _router = inject(Router);
+  _users = inject(UserService);
 
-// METODO SENCILLO
-router = inject(Router);
+  // Variables de credenciales
+  correo: string = '';
+  contrasena: string = '';
 
-admin = {
-  correo: "ecoclosetAdmin",
-  contrasena: "ecocloset"
-}
+  // Almacenar usuarios obtenidos de la base de datos
+  allUsers: User[] = [];
 
-correo: string = '';
-contrasena: string = '';
+  // Datos del administrador
+  admin = {
+    correo: "ecoclosetAdmin",
+    contrasena: "ecocloset"
+  };
 
-iniciarSesion() {
-  if (this.correo === this.admin.correo && this.contrasena === this.admin.contrasena) {
-    // Redirigir al usuario a otra página
-    alert('Bienvenido a Ecocloset');
-    this.router.navigate(['/Dashboard']);
-    
-  } else {
-    // Mostrar un mensaje de error o realizar otra acción
-    alert('Correo o contraseña incorrectos');
+  // Función para obtener los usuarios desde la base de datos
+  obtenerUsuarios() {
+    this._users.getUsers().subscribe({
+      next: (res: any) => {
+        this.allUsers = res.datos;
+        console.log(this.allUsers);
+      },
+      error: (error: any) => {
+        console.error('Error al obtener los usuarios', error);
+        alert('Error al obtener los usuarios');
+      }
+    });
+  }
+
+  // Función de inicio de sesión
+  iniciarSesion() {
+    // Verificar si los campos están vacíos
+    if (!this.correo || !this.contrasena) {
+      alert('Por favor ingresa tu correo y contraseña');
+      return;
+    }
+
+    // Verificar si es el inicio de sesión del administrador
+    if (this.correo === this.admin.correo && this.contrasena === this.admin.contrasena) {
+      // Redirigir al panel de administración
+      alert('Bienvenido Administrador a Ecocloset');
+      this._router.navigate(['/Dashboard']);
+    } else {
+      // Llamar a obtener los usuarios y validar las credenciales
+      this.obtenerUsuarios();
+
+        let usuarioEncontrado = false;
+
+        // Buscar en la lista de usuarios
+        for (let i = 0; i < this.allUsers.length; i++) {
+          if (this.allUsers[i].Correo === this.correo && this.allUsers[i].Contrasena === this.contrasena) {
+            usuarioEncontrado = true;
+            break; // Salir del bucle cuando se encuentra una coincidencia
+          }
+        }
+
+        // Si el usuario es encontrado, redirigir a la página principal
+        if (usuarioEncontrado) {
+          alert('Bienvenido Usuario a Ecocloset');
+          this._router.navigate(['/']);
+        } else {
+          // Si no se encuentra el usuario, mostrar un mensaje de error
+          alert('Correo o contraseña incorrectos');
+        }
+    }
   }
 }
 
-// -------------------------------------------------------------------------------
 
-
-//   router = inject(Router);
-//   // 1. INJECT de las dependencias a usar
-//     _admin = inject(AdminService)
-//     _user = inject(UserService)
-
-//   // 2. Declaracion de variables
-//     allAdmin : Admin [] = []; //Array de administradores 
-//     allUsers : User [] = []; //Array de usuarios
-
-//   correo: string = '';
-//   contrasena: string = '';
-
-//   // 3.Traer la dependencias del servicio y usar los metodos
-//   obtenerAdmins(){
-//     this._admin.getAdmin().subscribe({
-//       next: (res:any) => {
-//         console.log ('Admins obtenidos:', res);
-//           // Guardar los datos en la variable
-//           this.allAdmin = res; 
-//       },
-//       error: (err) => {
-//         console.error('Error al obtener administradores:', err);
-//       }
-//     });
-//   }
-
-//   obtenerUsuarios() {
-//     this._user.getUsers().subscribe({
-//       next: (res: any) => {
-//         console.log('Usuarios obtenidos:', res);
-//         this.allUsers = res; // Asignar respuesta al array allUsers
-//       },
-//       error: (err) => {
-//         console.error('Error al obtener usuarios:', err);
-//       }
-//     });
-//   }
-//   // 4. Método para iniciar sesión
-//   iniciarSesion() {
-//     // Validar las credenciales de los administradores
-//     const admin = this.allAdmin.find(admin => admin.Correo === this.correo && admin.Contrasena === this.contrasena);
-//     if (admin) {
-//       // Redirigir al Dashboard de admin
-//       alert('Bienvenido Admin');
-//       this.router.navigate(['/Dashboard']);
-//       return;
-//     }
-
-//    // Validar las credenciales de los usuarios
-//    const user = this.allUsers.find(user => user.Correo === this.correo && user.Contrasena === this.contrasena);
-//    if (user) {
-//      // Redirigir a la página de usuario
-//      this.router.navigate(['/']);
-//      return;
-//    }
-
-//    // Si no se encuentra el usuario ni el admin, mostrar error
-//    console.log('Correo o contraseña incorrectos');
-//    alert('Correo o contraseña incorrectos');
-//  }
-
- 
-}
