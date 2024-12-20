@@ -18,7 +18,7 @@ header{
     background-color: var(--colorPrimario);
 }
 
-.btn{
+#btn{
     background-color: var(--colorPrimario);
     color: var(--colorBlanco);
     font-size: 16px;
