@@ -52,3 +52,64 @@
     padding: 8px;
     border-radius:8px ;
 }
+
+/* Estilos del modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.164);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    height: 80%;
+    width: 55%;
+    border-radius: 16px;
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--colorBlanco);
+    padding: 24px;
+  }
+  
+  .modal-content img {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: cover;
+    margin: 16px 0;
+    border-radius: 16px;
+  }
+  
+  .modal-content button {
+    padding: 10px 20px;
+    background-color: var(--colorSecundario);
+    color: var(--colorBlanco);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-content button:hover {
+    background-color: var(--colorPrimario);
+  }
+
+  .modal-content h2{
+    font-weight: bolder;
+    color: var(--colorPrimario);
+  }
+
+  .modal-content h3{
+    color: var(--colorTexto);
+  }
+
+  .modal-content h4{
+    color: var(--colorTexto);
+    font-weight: bolder;
+  }

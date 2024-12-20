@@ -11,12 +11,13 @@ import { Products } from '../../interfaces/products';
 
 // IMPORTAR EL NGFOR PARA USAR EL CICLO
 import { NgFor } from '@angular/common';
+import { NgIf } from '@angular/common';
 
 
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [NgFor], //<- USO EN EL COMPONENT
+  imports: [NgFor, NgIf], //<- USO EN EL COMPONENT
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css'
 })
@@ -52,6 +53,36 @@ export class ProductCardComponent {
     );
   }
 
+  // MODAL
+  // Variable para almacenar el producto seleccionado
+  // PROBAR EL TRAER PRODUCTO
+  productoEspecifico(id:string | undefined){
+    console.log(id)
+    return this.allProducts.find(producto => producto._id === id);
+  }
+  
+  selectedProducto: any;
+
+  // Variable para controlar si el modal está visible
+  showModal: boolean = false;
+
+
+  handleClick2(id: string | undefined) {
+    this.selectedProducto = this.productoEspecifico(id);  // Asignar el producto seleccionado
+    // Si el producto es encontrado, mostrar el modal
+    if (this.selectedProducto) {
+      this.showModal = true;
+    } else {
+      console.log("Producto no encontrado");
+      alert('Producto no encontrado');
+    }
+  }
+
+  // Método para cerrar el modal
+  closeModal() {
+    this.showModal = false;  // Ocultar el modal
+  }
+
   // Método para mezclar el arreglo de productos de forma aleatoria (Fisher-Yates Shuffle)
   shuffleProducts() {
     for (let i = this.allProducts.length - 1; i > 0; i--) {
@@ -60,10 +91,6 @@ export class ProductCardComponent {
     }
   }
 
-  // PROBAR EL TRAER PRODUCTO
-  handleClick(id:string | undefined){
-    console.log('Identificar el ID' + id)
-  }
 
   // Mostarlo al cargar el contenido de la pagina
   // Usar el metodo -> ngOnInit
