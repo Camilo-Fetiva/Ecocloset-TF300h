@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { NavBarComponent } from '../../components/nav-bar/nav-bar.component';
@@ -12,6 +12,8 @@ import { UserService } from '../../services/user.service';
 // IMPORTAR LAS INTERFASES
 import { Admin } from '../../interfaces/admin';
 import { User } from '../../interfaces/user';
+import { Login } from '../../interfaces/login';
+import { userInfo } from 'os';
 
 
 @Component({
@@ -28,17 +30,23 @@ export class LoginComponent {
   _router = inject(Router);
   _users = inject(UserService);
 
-  // Variables de credenciales
-  correo: string = '';
-  contrasena: string = '';
+  // INFORMACION OBTENIDA DEL FORMULARIO
+  formLogin = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
+
 
   // Almacenar usuarios obtenidos de la base de datos
   allUsers: User[] = [];
+  Correo: string = '';
+  Contrasena: string = '';
 
   // Datos del administrador
   admin = {
-    correo: "ecoclosetAdmin",
-    contrasena: "ecocloset"
+    Correo: "ecoclosetAdmin",
+    Contrasena: "ecocloset",
+    Nombre: 'Camilo',
   };
 
   // Función para obtener los usuarios desde la base de datos
@@ -58,39 +66,44 @@ export class LoginComponent {
   // Función de inicio de sesión
   iniciarSesion() {
     // Verificar si los campos están vacíos
-    if (!this.correo || !this.contrasena) {
+    if (!this.Correo || !this.Contrasena) {
       alert('Por favor ingresa tu correo y contraseña');
       return;
     }
 
     // Verificar si es el inicio de sesión del administrador
-    if (this.correo === this.admin.correo && this.contrasena === this.admin.contrasena) {
+    if (this.Correo === this.admin.Correo && this.Contrasena === this.admin.Contrasena) {
       // Redirigir al panel de administración
-      alert('Bienvenido Administrador a Ecocloset');
+      alert('Bienvenido a Ecocloset ' + this.admin.Nombre);
       this._router.navigate(['/Dashboard']);
-    } else {
-      // Llamar a obtener los usuarios y validar las credenciales
-      this.obtenerUsuarios();
-
-        let usuarioEncontrado = false;
-
-        // Buscar en la lista de usuarios
-        for (let i = 0; i < this.allUsers.length; i++) {
-          if (this.allUsers[i].Correo === this.correo && this.allUsers[i].Contrasena === this.contrasena) {
-            usuarioEncontrado = true;
-            break; // Salir del bucle cuando se encuentra una coincidencia
-          }
-        }
-
-        // Si el usuario es encontrado, redirigir a la página principal
-        if (usuarioEncontrado) {
-          alert('Bienvenido Usuario a Ecocloset');
-          this._router.navigate(['/']);
-        } else {
-          // Si no se encuentra el usuario, mostrar un mensaje de error
-          alert('Correo o contraseña incorrectos');
-        }
+      return;
     }
+
+    // VERIFICAR SI ES USUARIO
+    const usuarioEncontrado = this.allUsers.find(user => user.Correo === this.formLogin.value.email);
+
+if (usuarioEncontrado) {
+  // El usuario fue encontrado
+  console.log('Usuario encontrado:', usuarioEncontrado);
+} else {
+  // El usuario no fue encontrado
+  console.log('Correo no registrado');
+}
+    //   // Llamar a obtener los usuarios y validar las credenciales
+    //   this.obtenerUsuarios();
+
+    //   const usuario = this.allUsers.find(user => user.Correo === this.Correo && user.Contrasena === this.Contrasena);
+
+
+    //   // Si el usuario es encontrado, redirigir a la página principal
+    //   if (usuario) {
+    //     alert('Bienvenido Usuario a Ecocloset');
+    //     this._router.navigate(['/']);
+    //   } else {
+    //     // Si no se encuentra el usuario, mostrar un mensaje de error
+    //     alert('Correo o contraseña incorrectos');
+    //   }
+    // }
   }
 }
 
