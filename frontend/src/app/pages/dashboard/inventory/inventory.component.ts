@@ -126,7 +126,7 @@ export class InventoryComponent {
             next: (res: any) => {
                 if (res) {
                     console.log('res', res);
-                    alert('Usuario actualizado satisfactoriamente');
+                    alert('Producto actualizado satisfactoriamente');
                     this.obtenerProductos();
                     this.toggleDiv();
                 } else {
