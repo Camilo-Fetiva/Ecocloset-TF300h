@@ -11,6 +11,9 @@ import { adminRouter } from './src/routes/admin.routes.js';
 // Dependencia para la conexion con el frontend
 import cors from 'cors';
 
+// IMPORTACIONES
+import path from "path";
+import { fileURLToPath } from "url";
 
 // 2. CONFIGURAR EL USO DEL SERVIDOR
 const app = express();
