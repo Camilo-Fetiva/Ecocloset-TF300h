@@ -1,0 +1,16 @@
+{
+  "routes": [
+    "/",
+    "/Acerca",
+    "/Comprar",
+    "/Dashboard",
+    "/Dashboard/Inventario",
+    "/Dashboard/Ordenes",
+    "/Dashboard/Usuarios",
+    "/Ingresar",
+    "/ListaProductos",
+    "/Login",
+    "/Productos",
+    "/ResumenCompra"
+  ]
+}
