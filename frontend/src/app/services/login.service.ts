@@ -31,7 +31,7 @@ export class LoginService {
   public _toastrService = inject (ToastrService); //Varialble para el gestor de mensajes
 
   // Ruta de conexion con el backend (VARIABLE DE ENTORNO)
-  private URL_LOGIN = 'http://localhost:3000/login'; //Esta ruta parte del backend para el inicio de sesion del usuario
+  private URL_LOGIN = 'http://104.131.115.48:3000/login'; //Esta ruta parte del backend para el inicio de sesion del usuario
 
   // LOGICA PARA LAS PETICIONES
   // 1. Inicio de sesion (PETICION POST)

@@ -122,8 +122,6 @@ overflow-x: hidden;
     text-align: center;
 }
 
-
-
 .designers h1{
     font-size: 48px;
     color: var(--colorSecundario);
@@ -139,7 +137,6 @@ overflow-x: hidden;
 .designers img{
     width: 90%;
 }
-
 
 /* Aca van los cuadros de color */
 .divisor-color{
@@ -310,7 +307,6 @@ overflow-x: hidden;
 /* Media screen para las medidas de tablet */
 @media screen and (min-width: 768px) and (max-width: 1023px){
 
-    /* Seccion de banner */
     .hero{
         height: 40vh;
     }

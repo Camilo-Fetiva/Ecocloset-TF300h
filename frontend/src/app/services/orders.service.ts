@@ -16,7 +16,7 @@ export class OrdersService {
   private _httpClient = inject(HttpClient);
 
   // RUTA DE CONEXION CON EL BACKEND
-  private URL_ORDERS = 'http://localhost:3000/ordenes';
+  private URL_ORDERS = 'http://104.131.115.48:3000/ordenes';
 
   // PETICIONES
 

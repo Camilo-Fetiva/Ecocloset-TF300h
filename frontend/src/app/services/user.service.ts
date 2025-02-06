@@ -16,7 +16,7 @@ export class UserService {
   private _httpClient = inject(HttpClient);
 
   // RUTA DE CONEXION CON EL BACKEND
-  private URL_USERS = 'http://localhost:3000/usuarios'; //404 no esta creado
+  private URL_USERS = 'http://104.131.115.48:3000/usuarios'; //404 no esta creado
 
   // PETICIONES
 
