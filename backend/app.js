@@ -18,6 +18,9 @@ dotenv.config();
 const port = process.env.PORT
 app.use(cors()); // <- Uso para utilizar el backend en el navegador
 
+const _filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(_filename);
+
 app.use(express.json()); //Usar formato JSON, CREAR y ACTUALIZAR datos
 app.use ( '/productos', productRouter);
 app.use ('/usuarios', userRouter);
@@ -25,10 +28,12 @@ app.use ('/ordenes', orderRouter);
 app.use ('/login', loginRouter);
 app.use ( '/administrador', adminRouter);
 
-//INVOCAR LA FUNCION DE LA BASE DE DATOS
-connectionMongo ();
+//PETICION PARA MOSTRAR FRONTEND
+app.use(express.static(path.join(__dirname, "public")));
 
-// 3. EJECUTAR EL SERVIDOR EN EL COMPUTADOR
-app.listen(port, () => {
-    console.log ('Soy el server ejecutandose correctamente en el puerto ', port);
-});
+// RUTA PRINCIPAL
+app.get("/", (req, res)=>{
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+})
+
+export default app;
