@@ -75,6 +75,14 @@ export class LoginComponent {
       return;
     }
 
+    // Verificar si es el inicio de sesión del administrador
+    if (this.Correo === this.admin.Correo && this.Contrasena === this.admin.Contrasena) {
+      // Redirigir al panel de administración
+      alert('Bienvenido a Ecocloset ' + this.admin.Nombre);
+      this._router.navigate(['/Dashboard']);
+      return;
+    }
+
     const credenciales: Login = {
       emailLogin: this.Correo,
       passwordLogin: this.Contrasena
@@ -88,6 +96,7 @@ export class LoginComponent {
             console.log(res);
             localStorage.setItem("token", res.token);
             this._login.redireccionar();
+            alert('Bienvenido a Ecocloset')
           }
         },
         error: (error)=>{
