@@ -4,8 +4,8 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node src/bin/www",
+    "dev": "nodemon src/bin/www"
   },
   "author": "Santiago Gutierrez - Camilo Fetiva",
   "license": "ISC",

@@ -18,6 +18,7 @@ import { fileURLToPath } from "url";
 // 2. CONFIGURAR EL USO DEL SERVIDOR
 const app = express();
 dotenv.config();
+connectionMongo();
 const port = process.env.PORT
 app.use(cors()); // <- Uso para utilizar el backend en el navegador
 
@@ -30,6 +31,10 @@ app.use ('/usuarios', userRouter);
 app.use ('/ordenes', orderRouter);
 app.use ('/login', loginRouter);
 app.use ( '/administrador', adminRouter);
+
+app.listen(port, () => {
+    console.log ('Soy el server ejecutandose correctamente en el puerto', port);
+});
 
 //PETICION PARA MOSTRAR FRONTEND
 app.use(express.static(path.join(__dirname, "public")));

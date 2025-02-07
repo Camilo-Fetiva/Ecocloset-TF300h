@@ -91,21 +91,18 @@ export class LoginComponent {
     if (credenciales) {
       console.log(credenciales);
       this._login.inicioSesion(credenciales).subscribe({
-        next: (res:any)=>{
-          if (res){
+        next: (res: any) => {
+          if (res) {
             console.log(res);
             localStorage.setItem("token", res.token);
             this._login.redireccionar();
             alert('Bienvenido a Ecocloset')
           }
         },
-        error: (error)=>{
+        error: (error) => {
           console.log(error);
         }
       })
     }
-
   }
 }
-
-

@@ -1,0 +1,9 @@
+import app from "../../app.js";
+
+// Obtener el puerto desde las variables de entorno
+const port = process.env.PORT || 3000;
+
+// Iniciar el servidor directamente con app.listen
+app.listen(port, () => {
+  console.log(`Servidor ejecutándose correctamente en el puerto ${port}`);
+});

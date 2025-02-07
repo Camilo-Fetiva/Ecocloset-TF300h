@@ -1,7 +1,7 @@
 /* Aca empieza el main */
 /* Esta seccion es del hero */
 .hero{
-    background-image: url(/assets/products-list/img-productsBanner.png);
+    background-image: url(../../../assets/products-list/img-productsBanner.png);
     background-size: cover;
     background-position: center;
     margin: 16px;
@@ -99,7 +99,7 @@
 }
 
 .img-pro1{
-    background-image: url(/assets/Home/img-producto1.png);
+    background-image: url(../../../assets/Home/img-producto1.png);
     background-size: cover;
     background-position: center;
     padding: 24px;
@@ -128,7 +128,7 @@
 }
 
 .img-pro2{
-    background-image: url(/assets/Home/img-producto2.png);
+    background-image: url(../../../assets/Home/img-producto2.png);
     background-size: cover;
     background-position: center;
     padding: 24px;
@@ -137,7 +137,7 @@
 }
 
 .img-pro3{
-    background-image: url(/assets/Home/img-producto3.png);
+    background-image: url(../../../assets/Home/img-producto3.png);
     background-size: cover;
     background-position: center;
     padding: 24px;
