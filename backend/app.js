@@ -32,9 +32,6 @@ app.use ('/ordenes', orderRouter);
 app.use ('/login', loginRouter);
 app.use ( '/administrador', adminRouter);
 
-app.listen(port, () => {
-    console.log ('Soy el server ejecutandose correctamente en el puerto', port);
-});
 
 //PETICION PARA MOSTRAR FRONTEND
 app.use(express.static(path.join(__dirname, "public")));
