@@ -11,12 +11,19 @@ import { adminRouter } from './src/routes/admin.routes.js';
 // Dependencia para la conexion con el frontend
 import cors from 'cors';
 
+// IMPORTACIONES
+import path from "path";
+import { fileURLToPath } from "url";
 
 // 2. CONFIGURAR EL USO DEL SERVIDOR
 const app = express();
 dotenv.config();
+connectionMongo();
 const port = process.env.PORT
 app.use(cors()); // <- Uso para utilizar el backend en el navegador
+
+const _filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(_filename);
 
 app.use(express.json()); //Usar formato JSON, CREAR y ACTUALIZAR datos
 app.use ( '/productos', productRouter);
@@ -25,10 +32,16 @@ app.use ('/ordenes', orderRouter);
 app.use ('/login', loginRouter);
 app.use ( '/administrador', adminRouter);
 
-//INVOCAR LA FUNCION DE LA BASE DE DATOS
-connectionMongo ();
-
-// 3. EJECUTAR EL SERVIDOR EN EL COMPUTADOR
 app.listen(port, () => {
-    console.log ('Soy el server ejecutandose correctamente en el puerto ', port);
+    console.log ('Soy el server ejecutandose correctamente en el puerto', port);
 });
+
+//PETICION PARA MOSTRAR FRONTEND
+app.use(express.static(path.join(__dirname, "public")));
+
+// RUTA PRINCIPAL
+app.get("/", (req, res)=>{
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+})
+
+export default app;

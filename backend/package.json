@@ -4,8 +4,8 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node src/bin/www",
+    "dev": "nodemon src/bin/www"
   },
   "author": "Santiago Gutierrez - Camilo Fetiva",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.10.0",
-    "mongoose": "^8.7.3"
+    "mongoose": "^8.7.3",
+    "path": "^0.12.7"
   }
 }

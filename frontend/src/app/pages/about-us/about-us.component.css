@@ -212,7 +212,7 @@
 /* Carbon Footprint Section */
 .carbon-footprint {
     text-align: center;
-    background-image: url(/assets/about-us/img-aboutBanner.png);
+    background-image: url(../../../assets/about-us/img-aboutBanner.png);
     height: 600px;
     background-size: cover;
     margin-bottom: 60px;
